@@ -1,18 +1,22 @@
 # 🛡️ CTF Sentinel - SecOps Interface
 
-mail: domedg5@gmail.com
+mail: [domedg5@gmail.com]
+
+
+### 🎥 Demo in Azione
+[Guarda la Video-Demo di CTF Sentinel 🎬](Images/Demo_CTF_Sentinelx2.mp4)
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> 43b5c8c (docs: aggiornata demo video in formato MP4 leggero per GitHub)
+CTF Sentinel è un'interfaccia avanzata, in stile "hacker"/SecOps, pensata per i professionisti della cybersecurity e i giocatori di CTF (Capture The Flag). Sfrutta la potenza dell'intelligenza artificiale (via Google Gemini) accoppiandola con strumenti locali di *ricognizione automatica* e analisi forense, velocizzando radicalmente la risoluzione dei challenge tecnici.
 
 ![CTF Sentinel Interface](Images/interface.png) <!-- SUGGERIMENTO: Aggiungere qui lo screenshot dell'avvio o della boot sequence! -->
 
-## 📸 Screenshots & Showcase
-
-### 🎥 Demo in Azione
-[Guarda la Video-Demo di CTF Sentinel 🎬](Images/Demo_CTF-Sentinel.mov)
-
-CTF Sentinel è un'interfaccia avanzata, in stile "hacker"/SecOps, pensata per i professionisti della cybersecurity e i giocatori di CTF (Capture The Flag). Sfrutta la potenza dell'intelligenza artificiale (via Google Gemini) accoppiandola con strumenti locali di *ricognizione automatica* e analisi forense, velocizzando radicalmente la risoluzione dei challenge tecnici.
-
 ## ✨ Funzionalità Core espansive
 
+* **Analisi Binaria Automatica (Recon)**  
   Appena carichi un file eseguibile, l'app lancia *dietro le quinte* uno script dedicato (`Utils/recon.py` che sfrutta checksec, strings, strace, objdump) e invia all'AI solo le informazioni decodificate salienti, aggirando il limite dei token o il bisogno di incollare log formattati malissimo dal terminale.
 * **Autogenerazione Writeups 📝**  
   Terminata l'analisi di una challenge, la funzione "Writeup" redigerà e formatterà per te l'intero documento Markdown attingendo a tutto il contesto del task isolando Exploit ed Analisi logica in paragrafi, scaricandolo direttamente sul tuo PC archiviandolo nella cartella `/Writeups`.
