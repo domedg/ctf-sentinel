@@ -1,66 +1,117 @@
+
 # 🛡️ CTF Sentinel - SecOps Interface
 
-mail: [domedg5@gmail.com]
+**mail:** [domedg5@gmail.com]
 
+---
 
 ### 🎥 Demo in Azione
 
+https://github.com/user-attachments/assets/9ba38a9e-c8a9-4659-9a26-b9ceedca748f
 
-https://github.com/user-attachments/assets/d3ed9a84-0f1e-40b6-a4d7-cf0de89bb4dc
+---
 
-CTF Sentinel è un'interfaccia avanzata, in stile "hacker"/SecOps, pensata per i professionisti della cybersecurity e i giocatori di CTF (Capture The Flag). Sfrutta la potenza dell'intelligenza artificiale (via Google Gemini) accoppiandola con strumenti locali di *ricognizione automatica* e analisi forense, velocizzando radicalmente la risoluzione dei challenge tecnici.
+## 🚀 Cos'è CTF Sentinel?
 
-## ✨ Funzionalità Core espansive
+CTF Sentinel è la tua piattaforma avanzata per la risoluzione di challenge CTF e attività di cybersecurity, pensata per professionisti e appassionati. Unisce la potenza dell'AI (Google Gemini) a una suite di tool locali e script personalizzati, offrendo un ambiente "hacker" elegante, produttivo e realmente utile.
 
-* **Analisi Binaria Automatica (Recon)**  
-  Appena carichi un file eseguibile, l'app lancia *dietro le quinte* uno script dedicato (`Utils/recon.py` che sfrutta checksec, strings, strace, objdump) e invia all'AI solo le informazioni decodificate salienti, aggirando il limite dei token o il bisogno di incollare log formattati malissimo dal terminale.
-* **Autogenerazione Writeups 📝**  
-  Terminata l'analisi di una challenge, la funzione "Writeup" redigerà e formatterà per te l'intero documento Markdown attingendo a tutto il contesto del task isolando Exploit ed Analisi logica in paragrafi, scaricandolo direttamente sul tuo PC archiviandolo nella cartella `/Writeups`.
-* **Codice e Exploit isolati Stile ChatGPT**  
-  Tutti i frammenti di codice e payload proposti dall'Intelligenza Artificiale sono isolati in riquadri autonomi (copiatili con un clic e pre-scaricabili coi file appropriati es. `.py` o `.sh`).
-* **Cyber Bookmarks Dinamici**  
-  Per usare Sentinel come desktop lavorativo, i tuoi tool OSINT, Web o Crypto preferiti sono a portata di click. Caricati interamente dalla lettura on-the-fly del file `Utils/Tools.md`.
+---
+
+## 🌳 Struttura del Progetto
+
+```text
+ctf-sentinel/
+├── Images/                # Media e screenshot interfaccia
+│   ├── interface.png
+│   └── Demo_CTF_Sentinelx2.mp4
+├── public/                # File pubblici e knowledge base
+│   └── knowledge.txt      # Base di conoscenza generata automaticamente
+├── src/                   # Codice React e logica app
+│   ├── App.tsx            # Interfaccia principale e AI logic
+│   ├── main.tsx           # Entry point React
+│   ├── index.css          # Stili custom e tema dark
+│   └── lib/
+│       └── utils.ts       # Utility JS/TS
+├── Utils/                 # Tool, script e risorse personali
+│   ├── recon.py           # Motore di analisi binaria automatica
+│   ├── Tools.md           # Raccolta di link/tool OSINT, crypto, forensics
+│   └── RepoMix/           # Output aggregati da repo/tool esterni
+├── scripts/               # Script di supporto (es. build knowledge)
+│   └── build-knowledge.js # Genera knowledge.txt da tutti i file chiave
+├── Writeups/              # Writeup generati e archiviati
+├── vite.config.ts         # Configurazione Vite + middleware Express
+├── package.json           # Dipendenze e script NPM
+├── start.sh               # Avvio rapido server (Unix)
+└── ...
+```
+
+---
+
+## 🧠 Knowledge Base & Automazione
+
+La knowledge base (public/knowledge.txt) viene generata automaticamente tramite uno script (`scripts/build-knowledge.js`) che aggrega e normalizza tutte le risorse, script, markdown e file di interesse dalla cartella Utils. Questo permette all'AI di attingere a:
+
+- Metodologie e appunti personali
+- Output di tool forensi e di ricognizione
+- Database di link e risorse (Utils/Tools.md)
+- Output aggregati da repository esterne (RepoMix)
+
+Ogni volta che carichi un binario, viene eseguito automaticamente `Utils/recon.py` (con opzione --noinput) per estrarre tutte le informazioni chiave (hash, checksec, strings, ecc.) e fornirle all'AI, velocizzando la fase di analisi e riducendo richieste ridondanti.
+
+---
+
+## ✨ Funzionalità Core
+
+- **Analisi Binaria Automatica**: Carica un file e ottieni subito tutte le info tecniche grazie a recon.py (checksec, strings, hash, strace, objdump...)
+- **Autogenerazione Writeup**: Al termine di una challenge, l'app genera un writeup markdown completo e lo archivia in /Writeups
+- **Exploit Box**: Ogni exploit o script proposto viene visualizzato in un riquadro dedicato, pronto da copiare o scaricare
+- **Cyber Bookmarks Dinamici**: I tuoi tool preferiti (da Tools.md) sono sempre accessibili come link rapidi nella sidebar
+- **Gestione Chat e Menu**: Puoi nascondere, eliminare o rinominare le chat e personalizzare la UI secondo le tue esigenze
+
+---
 
 ## ⚙️ Requisiti di Sistema
 
-Per far funzionare il progetto sulla tua macchina locale (strutturata idealmente per WSL o Linux), sono necessari:
+- **Node.js** (v18+)
+- **Python 3** (per recon.py)
+- **Toolchain Linux**: file, ldd, strings, readelf, objdump, hexdump, ltrace, strace, checksec
+- **API Key Google Gemini** (da salvare in `.env.local`)
 
-- **Node.js** (v18 o superiore per avviare Vite e il server middleware React)
-- **Python 3** (per lo script di recon integrato locale)
-- **Toolchain Binaria Linux** raccomandata: `file`, `ldd`, `strings`, `readelf`, `objdump`, `hexdump`, `ltrace`, `strace`, `checksec`.
-- Una **API Key valida di Google Gemini**, salvata rigorosamente in locale nel progetto.
+---
 
-## 🚀 Setup e Installazione
+## 🛠️ Setup e Avvio
 
-1. Clona questa repository:
-   ```bash
-   git clone <URL_REPOSITORy>
-   cd ctf-sentinel
-   ```
-2. Installa le dipendenze NPM:
-   ```bash
-   npm install
-   ```
-3. Sicurezza API: crea all'interno della cartella principale un file `.env.local` (che **DEVE** essere mantenuto segreto e non caricato nel git) contenente:
-   ```env
-   GEMINI_API_KEY=inserisci_qui_la_tua_key
-   APP_URL="http://localhost:3000"
-   ```
-4. Avvia il server di sviluppo ibrido front/back:
-   ```bash
-   npm run dev
-   ```
-   *Oppure puoi lanciare lo sh dedicato se hai Unix: `./start.sh`.*
+1. Clona la repo:
+  ```bash
+  git clone <URL_REPOSITORY>
+  cd ctf-sentinel
+  ```
+2. Installa le dipendenze:
+  ```bash
+  npm install
+  ```
+3. Crea `.env.local` con la tua API Key:
+  ```env
+  GEMINI_API_KEY=la_tua_key
+  ```
+4. Avvia il server:
+  ```bash
+  npm run dev
+  # oppure
+  ./start.sh
+  ```
 
+---
 
-## 🧰 Struttura del Progetto / API
+## 📚 Approfondimenti e Personalizzazioni
 
-Trattandosi di un'app basata su Vite (che è un dev server nativo Node), sono stati scritti driver locali per comunicare col file system senza dover compilare veri e propri microservizi extra:
+- Puoi estendere recon.py con nuovi moduli di analisi
+- Modifica Tools.md per aggiungere i tuoi link/tool preferiti
+- I file in RepoMix permettono di integrare output da altre repository/tool
+- La UI è completamente personalizzabile (stili, sidebar, exploit box)
 
-- `/src/App.tsx` -> Il cuore logico dell'interfaccia React, contiene hook, Markdown rendering logic e layout.
-- `vite.config.ts` -> Oltre a buildare React, fa da **Middleware Express**. Intercetta per esempio rotta POST al `/api/writeup` (per il salvataggio file) e la POST al `/api/recon` (eseguendo *spawn* di child processes per lo script in Python nel OS).
-- `/Utils/recon.py` -> Motore Python puramente Linux di ispezione statica e dinamica.
-- `/Utils/Tools.md` -> Database testuale letto allo startup dei pannelli laterali.
+---
 
-## 🤝 Contributi
-Il file `vite.config.ts` supporta benissimo modifiche! Sentitevi liberi di forkarlo per estendere `recon.py` con routine auto-dumper come *js-beautify* per il web o analizzatori log.
+## 🤝 Contribuisci
+
+Forka la repo, proponi nuove feature o migliora i tool esistenti! Ogni contributo è benvenuto.
