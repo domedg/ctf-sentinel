@@ -1,0 +1,1168 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+The content has been processed where security check has been disabled.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Security check has been disabled - content may contain sensitive information
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+binary_recon_Dome/
+  alias_for_terminal.py
+  README.md
+  recon.py
+full_binary_auto/
+  ofw_offset_finder.py
+  README.md
+network_mapper_Gianny/
+  alias_for_terminal.py
+  banner_ascii.txt
+  mapper.py
+  README.md
+  shell_colors.py
+Tools_online/
+  Tools.md
+README.md
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="binary_recon_Dome/alias_for_terminal.py">
+#!/usr/bin/env python3
+import subprocess
+import os
+import sys
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+venv_python = os.path.abspath(os.path.join(current_dir, "../.venv/bin/python"))
+
+# Trovo il path assoluto dello script da eseguire (recon.py)
+script_to_run = os.path.join(current_dir, "recon.py")
+
+def main():
+    # Recupero tutti gli argomenti passati al wrapper tranne il nome del file stesso
+    args = sys.argv[1:]
+
+    # Costruisco il comando: [python_del_venv, script, arg1, arg2, ...]
+    command = [venv_python, script_to_run] + args
+
+    try:
+        # Esegue il comando e mantiene il controllo del terminale (stdin/stdout)
+        subprocess.run(command)
+    except KeyboardInterrupt:
+        sys.exit(0)
+    except Exception as e:
+        print(f"Errore nel wrapper: {e}")
+
+if __name__ == "__main__":
+    main()
+</file>
+
+<file path="binary_recon_Dome/README.md">
+# Writeup: Binary Recon Automation Tool
+
+Questo script Python è un analizzatore statico automatizzato per file binari (formato ELF). È progettato per accelerare la fase di **Reconnaissance** durante sfide di Reverse Engineering o Vulnerability Assessment, aggregando l'output dei principali strumenti di analisi di sistema in un unico report leggibile e ricercabile.
+
+---
+
+## 🚀 Caratteristiche Principali
+
+* **Analisi Multi-Tool**: Integra `readelf`, `objdump`, `checksec`, `strings` e `hexdump`.
+* **Gestione dell'Output**: Permette di scegliere tra una visualizzazione sintetica (anteprima) o completa.
+* **Logging Intelligente**: Opzione per salvare l'intero output in un file di testo pulito (senza codici colore ANSI).
+* **Pattern Matching (Secret Hunting)**: Scansiona automaticamente tutto l'output generato alla ricerca di:
+    * Flag in formato `CCIT{...}` o `flag{...}`.
+    * Credenziali comuni (password, secret, admin, root).
+
+---
+
+## 🛠 Prerequisiti
+
+Lo script si appoggia a utility standard di Linux. Assicurati di avere installato:
+* **Python 3**
+* **Binutils** (`readelf`, `objdump`, `strings`, `hexdump`)
+* **Checksec** (opzionale, ma raccomandato per l'analisi delle mitigazioni)
+
+---
+
+## 📖 Modalità d'Uso
+
+### 1. Preparazione
+Salva il codice in un file, ad esempio `recon.py`, e rendilo eseguibile:
+```bash
+chmod +x recon.py
+```
+
+### 2. Esecuzione
+Lancia lo script passando come argomento il binario che vuoi analizzare:
+```bash
+./recon.py ./nome_binario
+```
+
+### 3. Interazione
+Durante l'esecuzione, lo script ti chiederà:
+1.  **Salvare su file?**: Se rispondi `y`, ti chiederà il nome del file (es. `report.txt`).
+2.  **Output completo a video?**: Se rispondi `n`, lo script mostrerà solo le prime 15 righe di sezioni lunghe (come il disassembly o i simboli) per non intasare il terminale, ma scriverà comunque tutto nel file di log se lo hai attivato.
+
+### 4. Aliasing da terminale
+È possibile creare un alias di sistema nel seguente modo:
+Rendere il file eseguibile
+> ```
+> chmod +x alias_for_terminal.py
+> ```
+Modificare `.bashrc` aggiungendo in fondo al file il comando `alias`
+> ```
+> nano ~/.bashrc
+> ```
+> ```
+> alias brec=<path_alias_for_terminal.py‎>
+> ```
+Refreshare il terminale
+> ```
+> source ~/.bashrc
+> ```
+---
+
+## 🔍 Sezioni Analizzate
+
+| Sezione | Comando Core | Scopo |
+| :--- | :--- | :--- |
+| **File Info** | `file` | Identifica architettura (x86, x64) e se il binario è strippato. |
+| **Checksec** | `checksec` | Verifica la presenza di NX, Stack Canaries, PIE e ASLR. |
+| **Strings** | `strings` | Estrae sequenze di caratteri stampabili (cerca flag o messaggi). |
+| **ELF Header** | `readelf -h` | Trova l'Entry Point e il tipo di file. |
+| **Symbols** | `readelf -s` | Elenca funzioni (`main`, `win`, `system`) e variabili globali. |
+| **Disassembly** | `objdump -D` | Mostra il codice assembly in sintassi Intel. |
+| **Hex Dump** | `objdump -s` | Analizza i dati raw nelle sezioni critiche come `.rodata` o `.got`. |
+
+---
+
+## ⚠️ Note sulla Sicurezza
+Lo script utilizza `subprocess` con `shell=True`. È progettato per l'uso in ambienti controllati (CTF, laboratori). Non sottoporre a scansione file binari provenienti da fonti totalmente inattendibili che potrebbero contenere exploit specifici per i tool di analisi stessi.
+
+> **Consiglio:** Usa sempre questo script come primo passo. Una volta individuate le funzioni interessanti nella sezione **SYMBOLS**, passa all'analisi dinamica con `gdb` o `pwndbg`.
+</file>
+
+<file path="binary_recon_Dome/recon.py">
+#!/usr/bin/env python3
+import subprocess
+import sys
+import os
+import re
+
+# --- Configurazione Colori ANSI ---
+C_BLUE = "\033[94m"
+C_GREEN = "\033[92m"
+C_YELLOW = "\033[93m"
+C_RED = "\033[91m"
+C_BOLD = "\033[1m"
+C_CYAN = "\033[96m"
+C_MAGENTA = "\033[95m"
+C_END = "\033[0m"
+
+full_output_buffer = ""
+
+def clean_ansi(text):
+    return re.sub(r'\033\[[0-9;]*m', '', text)
+
+def print_header(title, command, description, file_ptr=None):
+    global full_output_buffer
+    header = (
+        f"\n{C_BLUE}{'='*80}{C_END}\n"
+        f"{C_BOLD}{C_YELLOW}TARGET: {title}{C_END}\n"
+        f"{C_GREEN}COMMAND: {C_END}{command}\n"
+        f"{C_GREEN}INFO:    {C_END}{description}\n"
+        f"{C_BLUE}{'-'*80}{C_END}"
+    )
+    print(header)
+    full_output_buffer += header + "\n"
+    if file_ptr:
+        file_ptr.write(clean_ansi(header) + "\n")
+
+def run_command(cmd, show_full=False, preview_lines=15, file_ptr=None, force_show=False):
+    global full_output_buffer
+    try:
+        # Usiamo shell=True e uniamo stderr a stdout. 
+        # Aggiungiamo '2>&1' per sicurezza extra nel comando shell.
+        proc = subprocess.run(
+            f"{cmd} 2>&1", 
+            shell=True, 
+            capture_output=True, 
+            text=True
+        )
+        
+        output = proc.stdout
+        if not output or output.strip() == "":
+            return
+
+        lines = output.strip().split('\n')
+        output_to_print = ""
+
+        # Decidiamo cosa stampare
+        if force_show or show_full or len(lines) <= preview_lines:
+            for line in lines:
+                output_to_print += f"  {line}\n"
+        else:
+            for line in lines[:preview_lines]:
+                output_to_print += f"  {line}\n"
+            output_to_print += f"\n{C_RED}[!] Output troncato ({len(lines)} righe).{C_END}\n"
+
+        # Stampa a video e salva
+        print(output_to_print)
+        full_output_buffer += output_to_print
+        if file_ptr:
+            file_ptr.write(clean_ansi(output_to_print))
+            
+    except Exception as e:
+        err = f"{C_RED}Errore esecuzione: {e}{C_END}\n"
+        print(err)
+        full_output_buffer += err
+
+def get_sections(target):
+    try:
+        output = subprocess.check_output(f"readelf -S -W {target}", shell=True, stderr=subprocess.DEVNULL, text=True)
+        return re.findall(r'\[\s*\d+\]\s+([\.\w\d_-]+)', output)
+    except:
+        return []
+
+def find_secrets():
+    global full_output_buffer
+    print(f"\n{C_BOLD}{C_MAGENTA}{'#'*30} ANALISI MATCHING FINALE {'#'*30}{C_END}")
+    clean_buf = clean_ansi(full_output_buffer)
+    patterns = {
+        "FLAG CCIT": r"CCIT\{.*?\}",
+        "Generic Flag": r"flag\{.*?\}",
+        "Credenziali": r"(?i)(password|passwd|secret|key|admin|root)[:=]\s*\S+",
+    }
+    found = False
+    for label, regex in patterns.items():
+        matches = re.findall(regex, clean_buf)
+        if matches:
+            found = True
+            for m in set(matches):
+                print(f"{C_GREEN}[+] TROVATA ({label}): {C_BOLD}{C_RED}{m}{C_END}")
+    if not found:
+        print(f"{C_YELLOW}[!] Nessun pattern trovato.{C_END}")
+
+def main():
+    if len(sys.argv) < 2:
+        print(f"{C_BOLD}{C_RED}Usage: python3 {sys.argv[0]} <binary_file>{C_END}")
+        sys.exit(1)
+
+    target = sys.argv[1]
+    if not os.path.exists(target):
+        sys.exit(1)
+
+    print(f"{C_BOLD}{C_CYAN}--- RECON AVANZATA: {target} ---{C_END}")
+    
+    f_ptr = None
+    save_file = input(f"{C_YELLOW}Salvare su file? (y/n): {C_END}").lower().strip()
+    if save_file in ['y', 'yes']:
+        fname = input(f"{C_YELLOW}Nome file: {C_END}").strip()
+        f_ptr = open(fname, "w")
+
+    choice = input(f"{C_YELLOW}Output completo a video? (y/n): {C_END}").lower().strip()
+    MODE_FULL = choice in ['y', 'yes']
+
+    # 1. File info
+    print_header("FILE INFO", f"file {target}", "Info architettura.", f_ptr)
+    run_command(f"file {target}", show_full=True, file_ptr=f_ptr)
+
+    # 2. Checksec (Sempre visibile)
+    print_header("CHECKSEC", f"checksec --file={target}", "Mitigazioni exploit.", f_ptr)
+    run_command(f"checksec --file={target}", show_full=True, file_ptr=f_ptr, force_show=True)
+
+    # 3. Strings
+    print_header("STRINGS", f"strings -n 6 {target}", "Stringhe interessanti.", f_ptr)
+    run_command(f"strings -n 6 {target}", show_full=MODE_FULL, file_ptr=f_ptr)
+
+    # 4. ELF Header
+    print_header("ELF HEADER", f"readelf -h {target}", "Entry point e metadati.", f_ptr)
+    run_command(f"readelf -h {target}", show_full=True, file_ptr=f_ptr)
+
+    # 5. Program Headers
+    print_header("PROGRAM HEADERS", f"readelf -l {target}", "Segmenti RWX.", f_ptr)
+    run_command(f"readelf -l {target}", show_full=True, file_ptr=f_ptr)
+
+    # 6. Simboli
+    print_header("SYMBOLS", f"readelf -s {target}", "Funzioni e variabili.", f_ptr)
+    run_command(f"readelf -s {target}", show_full=MODE_FULL, file_ptr=f_ptr)
+
+    # 7. Disassembly
+    print_header("DISASSEMBLY", f"objdump -M intel -D {target}", "Codice assembly.", f_ptr)
+    run_command(f"objdump -M intel -D {target}", show_full=MODE_FULL, file_ptr=f_ptr)
+
+    # 8. Hex Dump
+    sections = get_sections(target)
+    for sect in ['.text', '.rodata', '.data', '.plt', '.got']:
+        if sect in sections:
+            cmd = f"objdump -s -j {sect} {target}"
+            print_header(f"HEX DUMP: {sect}", cmd, f"Dati raw in {sect}.", f_ptr)
+            run_command(cmd, show_full=MODE_FULL, file_ptr=f_ptr)
+
+    # 9. Fallback
+    print_header("HEURISTIC DUMP", f"hexdump -C -n 512 {target}", "Primi 512 byte.", f_ptr)
+    run_command(f"hexdump -C -n 512 {target}", show_full=True, file_ptr=f_ptr)
+
+    find_secrets()
+    if f_ptr: f_ptr.close()
+
+if __name__ == "__main__":
+    main()
+</file>
+
+<file path="full_binary_auto/ofw_offset_finder.py">
+#!/usr/bin/env python3
+
+from pwn import *
+
+def red(): return '\033[91m'
+def green(): return '\033[92m'
+def yellow(): return '\033[93m'
+def blue(): return '\033[94m'
+def reset(): return '\033[0m'
+
+HOST = 'shellcoder.challs.cyberchallenge.it'
+PORT = 38201
+elf = context.binary = ELF('/home/giovanni/Desktop/cyber_challenge_repo/2026/binary/shellcoder/shellcoder/build/shellcoder', checksec=True)
+
+
+class BinaryAnalyzer():
+
+    def __init__(self, HOST: None, PORT: None, binary_path: None):
+        self.HOST = HOST
+        cond_host = self.verify_host
+        if HOST and not cond_host:
+            raise ValueError(f'{red()}Error while creating object: Invalid host.{reset()}')
+        
+        self.PORT = PORT
+        cond_port = self.verify_port()
+        if PORT and not cond_port:
+            raise ValueError(f'{red()}Error while creating object: Invalid port.{reset()}')
+
+        self.binary_path = binary_path
+        cond_path = self.verify_path()
+        if binary_path and not cond_path:
+            raise ValueError(f'{red()}Error while creating object: Invalid path.{reset()}')
+
+        self.elf = None
+        self.architecture = None
+        if binary_path:
+            elf = ELF(binary_path, checksec=True)
+            self.elf = context.binary = elf
+            self.architecture = elf.arch
+
+        self.mode = self.set_mode(cond_host, cond_port, cond_path)
+        if self.is_ivalid():
+            raise ValueError(f'{red()}Error while creating object: Something is missing!.{reset()}')
+        
+    def verify_host(self): # Frose mi ci devo collegare anche con la porta? È da capire!
+        try: 
+            result = subprocess.run(['ping', '-c', '4', self.HOST], capture_output=True, text=True)
+            if result.returncode == 0:
+                # Verifico se ci sono pacchetti ricevuti
+                if "0 received" in result.stdout or re.search(r'(\d+) packets transmitted, 0 received', result.stdout):
+                    print(f'{red()}Unreachable Host!{reset()}')
+                    return False
+                else:
+                    log.success('The Host i reachable!{reset()}')
+                    return False
+            else:
+                print(f'{red()}Ping Failed!')
+                return False
+        except Exception as e:
+            print(f"{red()}Error: {e}{reset()}")
+            return False
+
+    def verify_port(self):
+        try:
+            if self.PORT and self.PORT < 0:
+                print(f'{red()}Negative port: {self.PORT}{reset()}')
+                return False
+            # Mettere una condizione per le porte riservate IANA 0 - 1023?  
+            if self.PORT > 65535:
+                print(f'{red()}PORT cannot be greater than 65535: {self.PORT}')
+                return False
+            else:
+                return True
+        except Exception as e:
+            print(f'{red()}Error: {e}{reset()}')
+            return False
+        
+    def verify_path(self):
+        try:
+            if os.path.exists(self.binary_path):
+                return True
+            else:
+                return False
+        except Exception as e:
+            print(f'{red()}Error: {e}{reset()}')
+            return False
+        
+    def set_mode(self, host, port, path):
+        if host and port and path:
+            return 'MISC'
+        elif host and port:
+            return 'LOCAL'
+        elif path:
+            return 'REMOTE'
+        else:
+            return 'INVALID'
+
+    def is_ivalid(self):
+        return True if self.mode == 'INVALID' else False
+
+    def is_misc(self):
+        return True if self.mode == 'MISC' else False
+    
+    def is_local(self):
+        return True if self.mode == 'LOCAL' else False
+    
+    def is_remote(self):
+        return True if self.mode == 'REMOTE' else False
+
+    def find_offset(self): ##aggiungere miglioramenti se si ha a che fare con un canary ecc. #TODO # e se le provassi tutte e mi faccio restituire la riga che da oveflow?
+        """
+        Invia un pattern ciclico per causare il crash, analizza il core dump
+        e restituisce l'offset esatto per controllare il flusso di esecuzione.
+        """
+        
+        # if self.is_invalid() ----> Già controllato nel costruttore
+        p, arch = process(self.elf), self.architecture if (self.is_misc() or self.is_local()) else p = remote(self.HOST, self.PORT), None
+        
+
+        # 1. Generiamo un pattern sufficientemente lungo per causare il Buffer Overflow
+        pattern_size = 500
+        pattern = cyclic(pattern_size)
+        
+        
+        while True:
+            p.recvuntil(b"bytes?")
+        
+        # Passiamo la lunghezza del nostro pattern, e poi il pattern stesso
+        p.send(p64(len(pattern))) 
+        p.send(pattern)
+        
+        # 4. Aspettiamo che il programma vada in crash (Segmentation fault)
+        p.wait()
+        
+        # 5. Leggiamo il file di core dump generato dal sistema operativo
+        core = p.corefile
+        
+        # 6. Controlliamo l'architettura
+        if elf.arch == 'amd64':  # Architettura 64-bit
+            crash_value = core.read(core.regs.rsp, 8)  # Leggiamo 8 byte
+        else:  # Architettura 32-bit
+            crash_value = core.read(core.regs.esp, 4)  # Leggiamo 4 byte
+
+        # 7. Troviamo a quale indice del pattern corrisponde quel valore
+        offset = cyclic_find(crash_value)
+        
+        log.success(f"L'offset calcolato automaticamente è: {offset}")
+        return offset
+</file>
+
+<file path="full_binary_auto/README.md">
+# ⚡ Pwn-AutoAnalyzer (Work In Progress)
+
+![Status](https://img.shields.io/badge/status-wip-orange.svg)
+![Language](https://img.shields.io/badge/language-python-blue.svg)
+![Framework](https://img.shields.io/badge/framework-pwntools-red.svg)
+
+`BinaryAnalyzer` è un wrapper Python progettato per automatizzare le operazioni ripetitive durante l'exploitation di binari ELF. Il tool mira a gestire la connessione, verificare la raggiungibilità del target e calcolare automaticamente gli offset critici sfruttando i core dump di sistema.
+
+---
+
+## ✨ Funzionalità Attuali
+
+* **Smart Targetting**: Riconoscimento automatico della modalità di esecuzione (`LOCAL`, `REMOTE`, o `MISC` per debugging locale con parametri remoti).
+* **Auto-Offset Finder**: Genera pattern ciclici, induce un crash controllato e analizza il `corefile` per determinare l'offset esatto di sovrascrittura dell'Instruction Pointer (EIP/RIP).
+* **Sanity Checks**: Validazione integrata di host, porte e percorsi dei file binari prima dell'esecuzione.
+* **Arch-Aware**: Gestione differenziata dei registri di crash tra architetture `amd64` e `i386`.
+
+---
+
+## 🛠️ Requisiti
+
+Per il corretto funzionamento (specialmente per l'analisi dei core dump), assicurati di avere:
+1. **Pwntools** installato: `pip install pwntools`
+2. **Core Dumps abilitati**: Su Linux, esegui `ulimit -c unlimited` per permettere la generazione dei file di core.
+
+---
+
+## 📖 Utilizzo (Esempio)
+
+```python
+from binary_analyzer import BinaryAnalyzer
+
+# Inizializza l'analizzatore per un binario locale
+analyzer = BinaryAnalyzer(
+    HOST="shellcoder.challs.cyberchallenge.it", 
+    PORT=38201, 
+    binary_path="./build/shellcoder"
+)
+
+# Calcola l'offset per il Buffer Overflow
+offset = analyzer.find_offset()
+print(f"Target offset found: {offset}")
+```
+
+---
+
+## 🚧 RoadMap (TODO)
+
+- [ ] **Buffer Overflow Detector**: Implementare il rilevamento automatico del buffer overflow.
+- [ ] **Canary Bypass**: Implementare il rilevamento automatico dello stack canary e tecniche di leaking.
+- [ ] **Pattern Matching migliorato**: Aggiungere il supporto per input non standard (es. bypass di filtri sui caratteri).
+- [ ] **Auto-Shellcode**: Generazione e iniezione automatica di shellcode basata sull'architettura rilevata.
+- [ ] **ROP Chain Builder**: Integrazione con `ROPGadget` per la creazione automatica di catene ROP semplici.
+
+---
+
+## ⚠️ Avvertenze
+Il calcolo dell'offset tramite `corefile` funziona solo in ambiente **locale**. L'automazione remota è limitata alla comunicazione standard I/O. 
+
+> "In exploit development, automation is the key to focus on the real logic, not the boilerplate."
+---
+**Happy Pwn!** 💻
+</file>
+
+<file path="network_mapper_Gianny/alias_for_terminal.py">
+#!/usr/bin/env python3
+import subprocess
+import os
+
+venv_python = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.venv/bin/python"))
+subprocess.run([venv_python, "mapper.py"])
+</file>
+
+<file path="network_mapper_Gianny/banner_ascii.txt">
+========================================================================================================================================================
+░███    ░██               ░██       ░███     ░███                                                        .        .       @@@@@@@@@@@@       .        . 
+░████   ░██               ░██       ░████   ░████                                                          .        .  @@@@@@@@@@@@@@@@@>      .        
+░██░██  ░██  ░███████  ░████████    ░██░██ ░██░██  ░██████   ░████████  ░████████   ░███████  ░██░████   ~         .  @@@@@@@@@@@@@@@@@@@@   =         .
+░██ ░██ ░██ ░██    ░██    ░██       ░██ ░████ ░██       ░██  ░██    ░██ ░██    ░██ ░██    ░██ ░███               .   -@@@@@ {@@@@@@@@@@ @@:          .  
+░██  ░██░██ ░█████████    ░██       ░██  ░██  ░██  ░███████  ░██    ░██ ░██    ░██ ░█████████ ░██                @   @@@@@@@    @@@@=   @@@             
+░██   ░████ ░██           ░██       ░██       ░██ ░██   ░██  ░███   ░██ ░███   ░██ ░██        ░██                @@@@@@@@@@@@   @@@    @@@=  @@%        
+░██    ░███  ░███████      ░████    ░██       ░██  ░█████░██ ░██░█████  ░██░█████   ░███████  ░██                 @@@@@@@@@ @@@@@@@@@@@@@@@@@@@         
+                                                             ░██        ░██                                      -=@@@@@@@@   @  @@@=  @@@@@@@       == 
+                                                             ░██        ░██                                 .       [@@@@@@@  .        @@@@@@   .       
+                                                                                                        .             @@@@@@@@@@@ @  @@@@@@ .           
+░██                                             ░██                                 ░██                              -@@@@@@@@@@@@@@@@@@@@              
+░██                                             ░██                                 ░██                              @@@@@@@@@@@@@@@@@@@@@@              
+░████████  ░██    ░██     ░████████             ░████████   ░███████   ░███████  ░████████              = +       ~ @@@@@@@@@@@@@@@@@@@@@@@ @ +       ~ 
+░██    ░██ ░██    ░██    ░██    ░██             ░██    ░██ ░██    ░██ ░██           ░██                            @@@@@@@@@@@@@@@@@@@@@@@@@ @          
+░██    ░██ ░██    ░██    ░██    ░██             ░██    ░██ ░██    ░██  ░███████     ░██                           @@@@@@@@@@@@@@@@@@@@@@@@@@@           
+░███   ░██ ░██   ░███    ░██   ░███             ░██    ░██ ░██    ░██        ░██    ░██                          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@         
+░██░█████   ░█████░██     ░█████░██ ░██████████ ░██    ░██  ░███████   ░███████      ░████                       @@@@@@@@@@@@@@@@@@@@@@@@@@@@@     .    
+                  ░██           ░██                                                                              ==+   @@@@@@@@@@@@@@@@@@@@          ~=-
+            ░███████      ░███████                                                                                     @@@@@@@@    @@@@@@               
+                                                                                                                       .@@@@@@                          
+                                                                                                                         @@@@                           
+========================================================================================================================================================
+</file>
+
+<file path="network_mapper_Gianny/mapper.py">
+#!/usr/bin/env python3
+import os 
+import pyshark
+from scapy.all import PcapReader, IP, IPv6, Ether, ARP, Raw
+from shell_colors import red, green, yellow, blue, reset
+import shutil
+import time
+import re
+
+
+def map_srcdest_hierarchy_strings(pcap_path, search_regex=None):
+    '''
+    Questo metodo mappa tutti gli endpoint (src e dst) e restituisce una gerarchia dei layer a livello trasporto.
+    '''
+    layers = [IP, IPv6, Ether, ARP]
+    data = {layer: set() for layer in layers}
+    hierarchy = set()
+    found_in_clear = [] # Sarà una lista di json
+
+    with PcapReader(pcap_path) as pcap_reader:
+        for index, packet in enumerate(pcap_reader):
+            for layer in data.keys():
+                if packet.haslayer(layer):
+                    data[layer].add((packet[layer].src, packet[layer].dst))
+
+            if search_regex and packet.haslayer(Raw):
+                # Estraggo e decodifico il payload in modo sicuro
+                payload = packet[Raw].load.decode('utf-8', errors='ignore')
+                matches = search_regex.findall(payload)
+                
+                if matches:
+                    # Rimuoviamo i duplicati nello stesso pacchetto per pulizia
+                    unique_matches = set(matches)
+                    src_ip = packet[IP].src if packet.haslayer(IP) else "Unknown"
+                    found_in_clear.append({
+                        "packet": index,
+                        "source": src_ip,
+                        "matches": unique_matches
+                    })
+
+            layer_chain = tuple(layer.__name__ for layer in packet.layers())
+            hierarchy.add(layer_chain)
+        
+    return data, hierarchy, found_in_clear
+
+def decrypt_pcap_with_keys(pcap_path, keylog_path):
+    global DEBUG
+
+    print(yellow(f'[*] Start decoding TLS using: {keylog_path}...'))
+    
+    # Preferenze di tshark per iniettare il file delle chiavi
+    tshark_prefs = {
+        'tls.keylog_file': keylog_path
+    }
+
+    # Creo l'oggetto capture. 
+    # Prendo solo i pacchetti applicativi decifrati, ignorando gli handshake (display_filter='http').
+    capture = pyshark.FileCapture(
+        input_file=pcap_path,
+        override_prefs=tshark_prefs,
+        display_filter='http'
+    )
+
+    decrypted_data = []
+    found_in_tls = [] # Sarà una lista di JSON
+
+    try:
+        # PyShark si utilizza tshark in background
+        for packet in capture:
+            pkt_index = packet.number # Indice di wireshark
+            # Se il pacchetto è stato decifrato con successo e contiene HTTP, avrà l'attributo .http accessibile.
+            if hasattr(packet, 'http'):
+                host = packet.http.get_field_value('host')
+                uri = packet.http.get_field_value('request_uri')
+                
+                if host and uri:
+                    decrypted_data.append(f"{host}{uri}")
+
+                if search_regex and hasattr(packet.http, 'file_data'):
+                    # Pyshark decodifica già il text/plain o text/html per noi
+                    payload = packet.http.file_data
+                    matches = search_regex.findall(payload)
+                    
+                    if matches:
+                        unique_matches = set(matches)
+                        found_in_tls.append({
+                            "packet": pkt_index,
+                            "matches": unique_matches
+                        })
+                    
+    except Exception as e:
+        print(red(f'[-] Error while parsing PyShark' + f': {e}' if DEBUG else '!'))
+    finally:
+        # Libero il processo tshark
+        try:
+            if 'capture' in locals():
+                capture.close()
+        except Exception:
+            pass
+
+    return decrypted_data, found_in_tls
+
+def generate_text_report(banner, pcap_path, data, hierarchy, found_in_clear, found_in_tls, time_taken):
+    # Creo un nome file basato sul pcap originale e lo salvo nella stessa cartella
+    original_dir = os.path.dirname(pcap_path)
+    base_name = os.path.basename(pcap_path).replace('.pcapng', '').replace('.pcap', '')
+    report_name = f"{base_name}_Report.txt"
+    
+    # Uniamo cartella originale e nome report per avere il path assoluto di salvataggio
+    report_file = os.path.join(original_dir, report_name)
+
+    print(yellow(f"\n[*] Generating awesome report layout to {report_file}..."))
+
+    with open(report_file, 'w', encoding='utf-8') as f:
+        # --- HEADER ---
+        f.write(banner+"\n")
+        f.write("+" + "="*76 + "+\n")
+        f.write("|" + "CYBER ASSISTANT - NETWORK ANALYSIS REPORT".center(76) + "|\n")
+        f.write("+" + "="*76 + "+\n")
+        f.write(f"[*] Target PCAP : {pcap_path}\n")
+        f.write(f"[*] Time Taken  : {time_taken:.4f} seconds\n")
+        f.write("+" + "-"*76 + "+\n\n")
+
+        # --- SEZIONE 1: GERARCHIA PROTOCOLLI ---
+        f.write("[1] PROTOCOL HIERARCHY MAP\n")
+        f.write("="*30 + "\n")
+        if hierarchy:
+            for chain in sorted(hierarchy):
+                f.write(f"    -> {' / '.join(chain)}\n")
+        else:
+            f.write("    No protocols detected.\n")
+        f.write("\n")
+
+        # --- SEZIONE 2: ENDPOINT CONVERSATIONS ---
+        f.write("[2] ENDPOINT CONVERSATIONS\n")
+        f.write("="*30 + "\n")
+        for layer_class, convos in data.items():
+            layer_name = layer_class.__name__
+            f.write(f"  [-] {layer_name} Traffic:\n")
+            if not convos:
+                f.write("      (No traffic recorded)\n")
+            else:
+                for src, dst in sorted(convos):
+                    f.write(f"      {src}  --->  {dst}\n")
+        f.write("\n")
+
+        # --- SEZIONE 3: MATCH IN CHIARO ---
+        f.write("[3] REGEX MATCHES (CLEAR TEXT)\n")
+        f.write("="*30 + "\n")
+        if found_in_clear:
+            for item in found_in_clear:
+                matches_str = ", ".join(item['matches'])
+                f.write(f"  [!] Packet #{item['packet']} | Src: {item['source']:<15} | MATCH: {matches_str}\n")
+        else:
+            f.write("    No strings found in clear text traffic.\n")
+        f.write("\n")
+
+        # --- SEZIONE 4: MATCH DECIFRATI (TLS) ---
+        f.write("[4] REGEX MATCHES (DECRYPTED TLS)\n")
+        f.write("="*30 + "\n")
+        if found_in_tls:
+            for item in found_in_tls:
+                matches_str = ", ".join(item['matches'])
+                f.write(f"  [!] Packet #{item['packet']} | MATCH: {matches_str}\n")
+        else:
+            f.write("    No strings found in decrypted TLS traffic (or no keylog provided).\n")
+        
+        # --- FOOTER ---
+        f.write("\n+" + "="*76 + "+\n")
+        f.write("|" + "END OF REPORT".center(76) + "|\n")
+        f.write("+" + "="*76 + "+\n")
+
+    print(green(f"[+] Report successfully saved to: {report_file}"))
+
+def endpoint_mapper(pcap_path, keylog_path=None, search_regex=None):
+
+    # ===========> ENDPOINT MAPPER ----------------------------
+    print(yellow('[*] Starting endpoint mapper...'))
+    start_mapper = time.perf_counter()
+    data, hierarchy, found_in_clear = map_srcdest_hierarchy_strings(pcap_path, search_regex)
+    end_mapper = time.perf_counter()
+    print(green(f'[v] Task finished in {end_mapper - start_mapper:.4f} seconds'))
+    
+    # ===========> TLS DECRYPTER ------------------------------
+    decrypted_traffic = None
+    found_in_tls = []
+    if keylog_path:
+        print(yellow('[*] Start decrypting TLS traffic...'))
+        start_decrypter = time.perf_counter()
+        decrypted_traffic, found_in_tls = decrypt_pcap_with_keys(pcap_path, keylog_path)
+        end_decrypter = time.perf_counter()
+        print(green(f'[v] Task finished in {end_decrypter - start_decrypter:.4f} seconds'))
+    
+    return data, hierarchy, found_in_clear, decrypted_traffic, found_in_tls
+
+if __name__ == "__main__":
+
+    DEBUG = True
+
+    with open(os.path.abspath(os.path.join(os.path.dirname(__file__), 'banner_ascii.txt'))) as f:
+        banner = f.read()
+    
+    print(red(banner)) # Non so se farlo più compresso
+    print()
+
+    SAVE_PATH, PCAP_PATH, KEYLOG_PATH, SEARCH_STRINGS = None, None, None, None
+    quest_pcap, quest_keys, quest_word = True, True, True
+    while True:
+        if not quest_pcap and not quest_keys and not quest_word:
+            break
+
+        if quest_pcap:
+            raw_pcap = str(input('Insert your pcap file path: '))
+            pcap = os.path.abspath(os.path.join(raw_pcap))
+            conf_pcap = str(input(f"{blue(f'Pcap inserted: {pcap}')}\n Confirm (any/N)? "))
+            if conf_pcap.lower() != 'n':
+                quest_pcap = False
+
+                # --- AUTOMAZIONE COPIA PCAP ---
+                tmp_pcap_path = os.path.join('/tmp', os.path.basename(pcap))
+                try:
+                    shutil.copy(pcap, tmp_pcap_path)
+                    print(blue(f"[+] PCAP automatically copied to {tmp_pcap_path} to bypass AppArmor."))
+                    PCAP_PATH = tmp_pcap_path 
+                    SAVE_PATH = pcap
+                except Exception as e:
+                    print(red(f"[-] Failed to copy PCAP to /tmp/: {e}"))
+                    PCAP_PATH = pcap 
+
+        if quest_keys:
+            raw_keys = str(input('Insert your keylog file path (or "N" to ignore): '))
+            if raw_keys.lower() == 'n':
+                quest_keys = False
+                KEYLOG_PATH = None
+                continue # skippo il resto
+            keys = os.path.abspath(os.path.join(raw_keys))
+            conf_keys = str(input(f"{blue(f'Keylog inserted: {keys}')}\n Confirm (any/N)? "))
+            if conf_keys.lower() != 'n':
+                quest_keys = False
+
+                # --- AUTOMAZIONE COPIA KEYS ---
+                tmp_keys_path = os.path.join('/tmp', os.path.basename(keys))
+                try:
+                    shutil.copy(keys, tmp_keys_path)
+                    print(blue(f"[+] Keylog automatically copied to {tmp_keys_path} to bypass AppArmor."))
+                    KEYLOG_PATH = tmp_keys_path 
+                except Exception as e:
+                    print(red(f"[-] Failed to copy Keylog to /tmp/: {e}"))
+                    KEYLOG_PATH = keys 
+
+        if quest_word:
+            choice = str(input('Want you to search any string in pcap (any/N)? '))
+            if choice.lower() != 'n':
+                raw_word = str(input('Insert your wordlist file path (or "N" to ignore and insert by yourself): '))
+                if raw_word.lower() != 'n':
+                    wordlist = os.path.abspath(os.path.join(raw_word))
+                    conf_word = str(input(f"{blue(f'Wordlist inserted: {wordlist}')}\n Confirm (any/N)? "))
+                    if conf_word.lower() != 'n':
+                        quest_word = False
+                        with open(wordlist) as file:
+                            SEARCH_STRINGS = [line.strip() for line in file.readlines() if line.strip()] 
+                else:
+                    quest_word = False
+                    SEARCH_STRINGS = ['CCIT{', 'flag', 'password', 'admin', 'root', 'secret']
+                    print(blue("Default strings to search:\n" + "\n".join(SEARCH_STRINGS)))
+                    choice = str(input('You want to add more (i think)! Press "N" to abort and proceed with defaults or "any" to continue: '))
+                    if choice.lower() != 'n':
+                        words = []
+                        while True:
+                            word = str(input('Enter your word (or type ":exit"): '))
+                            if word == ':exit':
+                                print("Your words:\n" + "\n".join([f"{i}: {w}" for i, w in enumerate(words)]))
+                                to_modify = str(input('Want you to modify any? \nIf you want type the index of the string/s comma separated (like 0, 1, ..., n) or "N". \nFrom now on you can\'t modify your choices ANYMORE... You can only restart the script (lol)! '))
+                                if to_modify.lower() != 'n':
+                                    to_modify = to_modify.strip().split(',')
+                                    to_modify = [int(index.strip()) for index in to_modify]
+                                    for index in to_modify:
+                                        words[index] = str(input(f'Replacing {words[index]} with: '))
+                                break
+                            else:
+                                words.append(word)
+
+                        SEARCH_STRINGS = SEARCH_STRINGS + words
+
+                    print(blue(f'Final list is:\n' + "\n".join(SEARCH_STRINGS)))
+            else:
+                quest_word = False
+                print('Okay :(')
+                continue
+
+
+    if PCAP_PATH:
+        search_regex = None
+        if SEARCH_STRINGS:
+            regex_parts = []
+            for kw in SEARCH_STRINGS:
+                if kw == "CCIT{":
+                    regex_parts.append(r"CCIT\{.*?\}") 
+                else:
+                    regex_parts.append(re.escape(kw))  # Mantengo i caratteri speciali
+            
+            combined_pattern = "|".join(regex_parts)
+            search_regex = re.compile(combined_pattern, re.IGNORECASE)
+            if DEBUG:
+                print(blue(f"\n[*] Regex successfully compiled: {combined_pattern}"))
+
+        start = time.perf_counter()
+        print(green('[^] Program started!'))
+        data, hierarchy, found_in_clear, decrypted_traffic, found_in_tls = endpoint_mapper(PCAP_PATH, KEYLOG_PATH, search_regex)
+        end = time.perf_counter()
+        generate_text_report(banner, SAVE_PATH, data, hierarchy, found_in_clear, found_in_tls, end-start)
+        print(green(f'[V] Program finished in {end-start:.4f} seconds!'))
+
+#TODO
+'''
+Aggiungere una funzione che esporta tutti gli oggetti e me li mette in una cartella, inoltre va alla ricerca di qualsiadi stringa codificata in base64 e me le salva nel file
+'''
+</file>
+
+<file path="network_mapper_Gianny/README.md">
+# Writeup: Network Analysis & TLS Decrypter Tool
+
+Questo script Python è un analizzatore avanzato di traffico di rete (PCAP/PCAPNG). Combina la potenza di **Scapy** per la mappatura dei protocolli e quella di **PyShark** per la decifrazione del traffico TLS, automatizzando la ricerca di stringhe sensibili e la generazione di report.
+
+---
+
+## 🚀 Caratteristiche Principali
+
+* **Protocol Hierarchy Mapping**: Ricostruisce l'intera pila dei protocolli presenti nel file (Ethernet, IP, ARP, ecc.).
+* **Conversational Mapping**: Estrae tutte le coppie IP sorgente/destinazione per ogni layer.
+* **TLS Decryption**: Se viene fornito un file `SSLKEYLOGFILE`, lo script decifra il traffico HTTPS e analizza il contenuto dei pacchetti applicativi.
+* **AppArmor Bypass**: Copia automaticamente i file in `/tmp/` per evitare blocchi di permessi da parte di servizi come Tshark/AppArmor su sistemi Linux.
+* **Regex Secret Hunting**: Ricerca dinamica di flag (format CCIT{...}), password o parole chiave personalizzate sia nel traffico in chiaro che in quello decifrato.
+* **Automatic Reporting**: Genera un file `.txt` formattato con i risultati dell'analisi nella stessa cartella del file sorgente.
+
+---
+
+## 🛠 Dipendenze Necessarie
+
+Per funzionare correttamente, lo script richiede:
+* **Tshark**: Deve essere installato nel sistema (`sudo apt install tshark`).
+* **Librerie Python**:
+    ```bash
+    pip install scapy pyshark
+    ```
+
+---
+
+## 📖 Guida all'Uso
+
+### 1. Avvio
+Esegui lo script e segui il wizard interattivo:
+```bash
+python3 network_mapper.py
+```
+
+### 2. Input Richiesti
+* **Path del PCAP**: Il percorso del file da analizzare.
+* **SSL Keylog (Opzionale)**: Se hai catturato le chiavi TLS (es. tramite variabile d'ambiente `SSLKEYLOGFILE` del browser), inserisci il path per vedere il traffico HTTPS in chiaro.
+* **Wordlist**: Puoi caricare un file di testo con le parole da cercare o usare i default (`flag`, `password`, `admin`, ecc.).
+
+### 3. Aliasing da terminale
+È possibile creare un alias di sistema nel seguente modo:
+Rendere il file eseguibile
+> ```
+> chmod +x alias_for_terminal.py
+> ```
+Modificare `.bashrc` aggiungendo in fondo al file il comando `alias`
+> ```
+> nano ~/.bashrc
+> ```
+> ```
+> alias mapper=<path_alias_for_terminal.py‎>
+> ```
+Refreshare il terminale
+> ```
+> source ~/.bashrc
+> ```
+
+---
+
+## 📊 Struttura del Report Generato
+
+Il report finale è diviso in 4 sezioni chiave:
+1.  **Protocol Hierarchy**: Visualizza come sono incapsulati i dati (es. `Ether / IP / TCP / HTTP`).
+2.  **Endpoint Conversations**: Elenco pulito di chi ha parlato con chi, diviso per protocollo.
+3.  **Regex Matches (Clear Text)**: Risultati trovati in payload non cifrati (es. Telnet, HTTP, FTP).
+4.  **Regex Matches (Decrypted TLS)**: Risultati estratti dai pacchetti HTTPS dopo la decifrazione.
+
+---
+
+## 💡 Note Tecniche e Troubleshooting
+
+* **Errore PyShark/Tshark**: Se ricevi errori durante la decifrazione, verifica che la versione di Tshark installata sia compatibile con il file PCAP (es. PCAPNG richiede versioni recenti).
+* **Performance**: L'analisi tramite `PcapReader` di Scapy è memory-efficient, ma il parsing TLS tramite PyShark può essere lento su file di grandi dimensioni (>100MB).
+* **AppArmor**: Lo script gestisce la copia in `/tmp` perché spesso Tshark non ha i permessi per leggere file direttamente dalle cartelle `home` o `Download` dell'utente.
+
+> **Prossimi Sviluppi (TODO):** Implementazione dell'estrazione automatica degli oggetti (file trasmessi) e decodifica automatica di stringhe in Base64 trovate nei payload.
+</file>
+
+<file path="network_mapper_Gianny/shell_colors.py">
+RED = '\033[91m' 
+GREEN = '\033[92m'
+YELLOW = '\033[93m'
+BLUE = '\033[94m'
+RESET = '\033[0m'
+
+def red(msg:str):
+    return f'{RED}{msg}{RESET}'
+
+def green(msg:str):
+    return f'{GREEN}{msg}{RESET}'
+
+def yellow(msg:str):
+    return f'{YELLOW}{msg}{RESET}'
+
+def blue(msg:str):
+    return f'{BLUE}{msg}{RESET}'
+
+def reset(msg:str):
+    return f'{RESET}'
+
+
+'''
+How to use:
+
+# ===================================== COLORS ========================================
+import os 
+import sys
+
+repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..'))
+sys.path.append(repo_root)
+from shell_colors import red, green, yellow, blue, reset
+# =====================================================================================
+'''
+</file>
+
+<file path="Tools_online/Tools.md">
+# 🧰 External Security Tools & Resources
+
+Una raccolta di tool online indispensabili per il debugging, la decodifica e l'exploitation durante le fasi di CTF o penetration testing.
+
+---
+
+## 🔐 Cryptography & Math
+Risorse per l'analisi di cifrari, teoria dei numeri e RSA.
+
+* **[FactorDB](https://factordb.com/)**: Database enorme per la fattorizzazione di numeri interi (fondamentale per rompere chiavi RSA con moduli $n$ piccoli).
+* **[Extended Euclidean Algorithm Calculator](https://miniwebtool.com/it/calcolatore-dell-algoritmo-euclideo-esteso/)**: Calcolatore per l'algoritmo di Euclide esteso, utile per trovare l'inverso modulare.
+* **[RapidTables (Dec to Hex)](https://www.rapidtables.com/convert/number/decimal-to-hex.html)**: Convertitore rapido tra basi numeriche (Decimale, Esadecimale, Binario).
+
+---
+
+## 🔓 Hash Cracking & Encoding
+Tool per bypassare protezioni e trasformare dati.
+
+* **[CrackStation](https://crackstation.net/)**: Uno dei migliori motori di ricerca per lookup table di hash (MD5, SHA1, ecc.).
+* **[CyberChef](https://cyberchef.io/)**: Il "coltellino svizzero" definitivo. Permette di concatenare operazioni di encoding, cifratura e analisi dati in una pipeline visuale.
+* **[Base64 to Image](https://base64.guru/converter/decode/image)**: Decoder specifico per ricostruire file immagine partendo da stringhe Base64.
+
+---
+
+## 🕵️ Forensics & Steganography
+Analisi di file multimediali e dati nascosti.
+
+* **[Aperi'Solve](https://www.aperisolve.com/)**: Tool all-in-one per la steganografia. Esegue automaticamente `zsteg`, `steghide`, `exiftool` e analisi dei layer di colore sulle immagini.
+
+---
+
+## 💻 PrivEsc & Linux Exploitation
+Post-exploitation e gestione dei sistemi.
+
+* **[GTFOBins](https://gtfobins.org/)**: Lista curata di binari Unix che possono essere utilizzati per bypassare restrizioni di sistema locali o ottenere privilegi di root.
+* **[DuckDNS](https://www.duckdns.org/)**: Servizio di Dynamic DNS gratuito, utile per mantenere l'accesso a macchine con IP dinamico durante i test.
+
+---
+
+## 🛠️ Regex & Development
+Utility per la manipolazione di stringhe e codice.
+
+* **[Regex101](https://regex101.com/)**: Il miglior debugger per espressioni regolari. Fondamentale per testare i pattern di ricerca che usi nei tuoi script di *Secret Hunting*.
+
+---
+
+> **Tip:** Se vuoi aggiungere un tool alla lista velocemente da terminale, usa:
+> `echo "* [Nome](URL)" >> tools.md`
+</file>
+
+<file path="README.md">
+# 🛠️ Multi-Tool Security Repo
+
+<p align="center">
+  <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExanVyODJxaGVnazZkNWI5anFtbnZ1dmtjMnJ4cHU1cWk2bDZpZmdjaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/P8ef3Dkynk0xLx1h1T/giphy.gif" alt="Hacker Gif">
+</p>
+
+Benvenuto nella nostra collezione personale di script per **Cybersecurity**, **Forensics** e **Reverse Engineering**. Questa repo è un "work in progress" di utility scritte per automatizzare le parti più noiose delle CTF e dei penetration test.
+
+---
+
+```
+ _____  _____ _____ _____     _____ _____  _____ _      _____ 
+/  __ \/  __ \_   _|_   _|   |_   _|  _  ||  _  | |    /  ___|
+| /  \/| /  \/ | |   | |       | | | | | || | | | |    \ `--. 
+| |    | |     | |   | |       | | | | | || | | | |     `--. \
+| \__/\| \__/\_| |_  | |       | | \ \_/ /\ \_/ / |____/\__/ /
+ \____/ \____/\___/  \_/       \_/  \___/  \___/\_____/\____/ 
+```                                                           
+                                                              
+## 👥 Maintainers
+* **Giovanni** ([@G-02-1](https://github.com/G-02-1)) - *Main Author*
+* **Domenico** ([@domedg](https://github.com/domedg)) - *Main Author*
+* **Marco** ([@MarcoRab01](https://github.com/MarcoRab01)) - *Main Author*
+
+## 🚀 Tool Attuali
+
+### 1. 🛡️ Binary Recon Automation (`recon.py`)
+Un analizzatore statico per binari **ELF**. 
+* **Cosa fa:** Esegue una ricognizione completa (checksec, simboli, disassembly, hex dump) e cerca automaticamente flag o credenziali nel codice, aggregando tutto in un report pulito.
+* **Target:** Reverse Engineering & BinExp.
+
+### 2. 🌐 Network Forensic Mapper (`network_mapper.py`)
+Un coltellino svizzero per l'analisi dei file **PCAP/PCAPNG**.
+* **Cosa fa:** Mappa la gerarchia dei protocolli e le conversazioni tra endpoint. Se hai un file di chiavi SSL, decifra il traffico TLS in tempo reale per scovare stringhe sensibili (flag, pass, token) nascoste nei payload HTTPS.
+* **Target:** Network Forensics & Traffic Analysis.
+
+---
+
+## 📂 Struttura della Repo
+
+```text
+.
+├── binary_recon_Dome/          # Analisi Statica Binari
+│   ├── README.md               # Documentazione specifica (Recon)
+│   └── recon.py                # Script automatizzato per checksec, simboli e strings
+│
+├── full_binary_auto/           # Exploitation Suite (WIP)
+│   ├── ofw_offset_finder.py    # Calcolatore automatico di offset tramite Core Dump
+│   └── README.md               # Guida all'uso dell'Auto-Analyzer e Pwn wrapper
+│
+├── network_mapper_Gianny/      # Network Forensic & Analysis
+│   ├── banner_ascii.txt        # Logo artistico per l'interfaccia CLI
+│   ├── mapper.py               # Analisi PCAP, mappatura endpoint e decriptazione TLS
+│   └── README.md               # Documentazione per l'analisi del traffico di rete
+│
+├── README.md                   # Home Page della Repo (Gif, Tool list e Maintainers)
+│
+└── Tools_online/               # Risorse Esterne
+    └── Tools.md                # Raccolta link cliccabili (CyberChef, CrackStation, ecc.)
+```
+
+---
+
+## 🛠 Prossimamente...
+- [ ] **B64 Auto-Decoder:** Ricerca e decodifica ricorsiva di stringhe Base64 nei payload.
+- [ ] **HTTP Object Extractor:** Export automatico di file (immagini, exe, doc) dai flussi HTTP decifrati.
+- [ ] **Android Manifest Parser:** Analisi rapida di file APK per leak di API Key.
+
+---
+
+## ⚠️ Disclaimer
+Questi tool sono creati per scopi didattici e per competizioni CTF. L'uso su sistemi senza autorizzazione è illegale. *Don't be a script kiddie, understand what you run.*
+
+---
+**Happy Hacking!** 💻
+</file>
+
+</files>

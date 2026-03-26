@@ -1,0 +1,24 @@
+ok ora modifica che quando do un binario la prima cosa che deve fare e eseguire il file Utils/recon.py come python3 recon.py binariopassato
+perche da tiutte le informazioni importanti sul binario (eseguilo con opzione --noinput perche alterimenti ti cihede se vuoi salvare output su file o se vuoi output completo invece con --noinput esegue output e basta, valuta tu come farglielo eseguire ma ogni volta che riceve un binario deve dfarlo perche e il punto di parttenza per trovare la flag, ad esempio ora mi ha chiesto 
+Per favore, esegui il comando strings sul file unbreakable_aes e forniscimi l'output completo. strings unbreakable_aes
+
+se avesse eseguito quello gia lo saprebbe insieme a molte altre info, ovviamente stai sempre attentno a quel gioco di token 
+
+domedg215
+d926
+
+implementare automazione per attivazione sito o app
+
+fornire file shell colors per formattazinoe colorata
+
+permettere di nascondere il menu a tendina con la lista di chat e di eliminarne o rinominare una.
+Inoltre voglio che quando mostra l exploit lo mette graficamente meglio e non come se fosse parte del testo ma in un riquadro
+appostito che renderizza il codice un po come in chat gpt
+
+e inoltre sulla sinistra mette come menu una serie di cybertools che non sono altro che link ai vari siti web di cyber security
+che io uso spesso tipo hackthebox, tryhackme, vulnhub, root-me, ctf-wiki, etc. e che quindi mi permettono di accedere a questi siti
+velocemente. Ovviamente questi link devono essere modificabili da parte dell'utente.
+La serie di questi tool disponibili li prende da Utils/Tools.md e dal repomix C:\Users\domedg\Downloads\other\ctf-sentinel\Utils\RepoMix\repomix-output-iamleblanc-CTF-tools.xml
+
+due node modules
+

@@ -1,0 +1,5 @@
+{
+  "name": "CTF-Sentinel",
+  "description": "Advanced vulnerability analysis engine for Binary Exploitation and Network Security in CTF competitions.",
+  "requestFramePermissions": []
+}

