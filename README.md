@@ -44,6 +44,7 @@ Per far funzionare il progetto sulla tua macchina locale (strutturata idealmente
 3. Sicurezza API: crea all'interno della cartella principale un file `.env.local` (che **DEVE** essere mantenuto segreto e non caricato nel git) contenente:
    ```env
    GEMINI_API_KEY=inserisci_qui_la_tua_key
+   APP_URL="http://localhost:3000"
    ```
 4. Avvia il server di sviluppo ibrido front/back:
    ```bash
