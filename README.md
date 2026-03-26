@@ -4,7 +4,10 @@ mail: [domedg5@gmail.com]
 
 
 ### 🎥 Demo in Azione
-[Guarda la Video-Demo di CTF Sentinel 🎬](Images/Demo_CTF_Sentinelx2.mp4)
+
+<video src="https://github.com/domedg/ctf-sentinel/raw/main/Images/Demo_CTF_Sentinelx2.mp4" controls width="100%"></video>
+
+*(Se il video non carica qui sopra, [clicca qui per scaricarlo/vederlo](https://github.com/domedg/ctf-sentinel/raw/main/Images/Demo_CTF_Sentinelx2.mp4))*
 
 
 CTF Sentinel è un'interfaccia avanzata, in stile "hacker"/SecOps, pensata per i professionisti della cybersecurity e i giocatori di CTF (Capture The Flag). Sfrutta la potenza dell'intelligenza artificiale (via Google Gemini) accoppiandola con strumenti locali di *ricognizione automatica* e analisi forense, velocizzando radicalmente la risoluzione dei challenge tecnici.
